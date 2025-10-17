@@ -1,0 +1,41 @@
+repo_url: https://github.com/vitorfleonardo/VerificAAA
+repo_name: VerificAAA
+
+site_url: https://github.com/vitorfleonardo/VerificAAA
+site_name: VerificAAA
+
+use_directory_urls: False
+
+nav:
+  - Início - VerificAAA: 'index.md'
+
+  - Desenvolvimento Web:
+    - Desenvolvimento: 'devWeb/non_text_content.md'
+
+  - Design:
+    - Design: 'design/design.md'
+  
+  - Geração de Conteúdo:
+    - Conteúdo: 'geracaoConteudo/conteudo.md'
+
+  - Gestão de Projetos:
+    - Gestão de Projetos: 'gestaoProjeto/gestaoProjeto.md'
+
+  - Ferramentas:
+    - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
+
+theme:
+  name: readthedocs
+  locale: pt_BR
+  titles_only: true
+  logo: imagens/logo-verificaaa.png
+  favicon: imagens/logo-verificaaa.png
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: false
+      clickable_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
