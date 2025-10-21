@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkprojeto_ihc=globalThis.webpackChunkprojeto_ihc||[]).push([[774],{3562:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/IHC_2025.2_Grupo02/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
