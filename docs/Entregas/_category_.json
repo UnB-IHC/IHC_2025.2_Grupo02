@@ -1,8 +1,7 @@
 {
   "label": "Entregas",
-  "position": 1,
+  "position": 2,
   "link": {
-    "type": "generated-index",
-    "description": ""
+    "type": "generated-index"
   }
 }
