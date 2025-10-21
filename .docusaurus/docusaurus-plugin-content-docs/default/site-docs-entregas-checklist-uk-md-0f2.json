@@ -1,0 +1,23 @@
+{
+  "id": "Entregas/checklistUK",
+  "title": "Ckecklist",
+  "description": "A. Princípios Gerais e Contexto",
+  "source": "@site/docs/Entregas/checklistUK.md",
+  "sourceDirName": "Entregas",
+  "slug": "/Entregas/checklistUK",
+  "permalink": "/IHC_2025.2_Grupo02/docs/Entregas/checklistUK",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Entregas/checklistUK.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sumário",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK"
+  }
+}

@@ -5,10 +5,10 @@
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
-  "permalink": "/docs/intro",
+  "permalink": "/IHC_2025.2_Grupo02/docs/intro",
   "draft": false,
   "unlisted": false,
-  "editUrl": "https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git/docs/intro.md",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 1,
@@ -17,7 +17,7 @@
   },
   "sidebar": "tutorialSidebar",
   "next": {
-    "title": "Tutorial - Basics",
-    "permalink": "/docs/category/tutorial---basics"
+    "title": "Entregas do Guia",
+    "permalink": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia"
   }
 }

@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 
-# **Sumário do Guia de Boas Práticas para Acessibilidade Digital**
+# Sumário
 
 Este guia foi produzido no âmbito do Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital (Digital Access Programme – DAP). Ele oferece subsídios teóricos, práticos, documentais e ferramentas para a implementação de estratégias de transformação digital acessível.
 
@@ -20,9 +20,7 @@ O conteúdo do Guia está organizado da seguinte forma:
 * Conclusão (p. 52)
 * Anexos (p. 56)
 
-### **Checklist de Pontos Chave do Guia**
-
-A acessibilidade é um direito humano, e o Guia recomenda seguir as Diretrizes de Acessibilidade para Conteúdo Web (WCAG) do W3C. O nível de conformidade mínimo recomendado é o Nível AA.
+### **Pontos Chave do Guia**
 
 #### **A. Princípios Gerais e Contexto**
 

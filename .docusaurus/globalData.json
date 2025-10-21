@@ -1,68 +1,33 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/IHC_2025.2_Grupo02/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/IHC_2025.2_Grupo02/docs",
           "mainDocId": "intro",
           "docs": [
             {
+              "id": "Entregas/checklistUK",
+              "path": "/IHC_2025.2_Grupo02/docs/Entregas/checklistUK",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Entregas/sumarioUK",
+              "path": "/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "intro",
-              "path": "/docs/intro",
+              "path": "/IHC_2025.2_Grupo02/docs/intro",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/congratulations",
-              "path": "/docs/tutorial-basics/congratulations",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/create-a-blog-post",
-              "path": "/docs/tutorial-basics/create-a-blog-post",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/create-a-document",
-              "path": "/docs/tutorial-basics/create-a-document",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/create-a-page",
-              "path": "/docs/tutorial-basics/create-a-page",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/deploy-your-site",
-              "path": "/docs/tutorial-basics/deploy-your-site",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/markdown-features",
-              "path": "/docs/tutorial-basics/markdown-features",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/manage-docs-versions",
-              "path": "/docs/tutorial-extras/manage-docs-versions",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/translate-your-site",
-              "path": "/docs/tutorial-extras/translate-your-site",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/tutorial---basics",
-              "path": "/docs/category/tutorial---basics",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/tutorial---extras",
-              "path": "/docs/category/tutorial---extras",
+              "id": "/category/entregas-do-guia",
+              "path": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -70,7 +35,7 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/intro",
+                "path": "/IHC_2025.2_Grupo02/docs/intro",
                 "label": "intro"
               }
             }
