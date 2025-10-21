@@ -23,7 +23,7 @@ const config = {
   url: 'https://unb-ihc.github.io/IHC_2025.2_Grupo02/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/IHC_2025.2_Grupo02/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
