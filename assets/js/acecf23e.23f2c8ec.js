@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkprojeto_ihc=globalThis.webpackChunkprojeto_ihc||[]).push([[903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/IHC_2025.2_Grupo02/blog","blogTitle":"Blog","authorsListPath":"/IHC_2025.2_Grupo02/blog/authors"}')}}]);
