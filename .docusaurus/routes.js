@@ -44,19 +44,55 @@ export default [
   },
   {
     path: '/IHC_2025.2_Grupo02/docs',
-    component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '30a'),
+    component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '9f5'),
     routes: [
       {
         path: '/IHC_2025.2_Grupo02/docs',
-        component: ComponentCreator('/IHC_2025.2_Grupo02/docs', 'fe6'),
+        component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '9d1'),
         routes: [
           {
             path: '/IHC_2025.2_Grupo02/docs',
-            component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '9dc'),
+            component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '07e'),
             routes: [
+              {
+                path: '/IHC_2025.2_Grupo02/docs/category/checklist-geral',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/category/checklist-geral', '33c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
               {
                 path: '/IHC_2025.2_Grupo02/docs/category/entregas-do-guia',
                 component: ComponentCreator('/IHC_2025.2_Grupo02/docs/category/entregas-do-guia', 'a8f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb', 'db5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/IHC_2025.2_Grupo02/docs/Checklist/Design',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/Design', 'e89'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade', 'bf2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo', 'bc5'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos', '129'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -69,12 +105,6 @@ export default [
               {
                 path: '/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK',
                 component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK', '44d'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/IHC_2025.2_Grupo02/docs/intro',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/intro', '58f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

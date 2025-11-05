@@ -1,0 +1,27 @@
+{
+  "id": "Checklist/Design",
+  "title": "Design",
+  "description": "Aparência",
+  "source": "@site/docs/Checklist/Design.md",
+  "sourceDirName": "Checklist",
+  "slug": "/Checklist/Design",
+  "permalink": "/IHC_2025.2_Grupo02/docs/Checklist/Design",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Checklist/Design.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gestão de Projetos",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos"
+  },
+  "next": {
+    "title": "Ferramentas de Acessibilidade",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade"
+  }
+}

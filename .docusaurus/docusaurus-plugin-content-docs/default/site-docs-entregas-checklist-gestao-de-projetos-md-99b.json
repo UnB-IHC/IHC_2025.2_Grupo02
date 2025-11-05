@@ -1,0 +1,27 @@
+{
+  "id": "Entregas/Checklist/gestaoDeProjetos",
+  "title": "Gestão de Projetos",
+  "description": "",
+  "source": "@site/docs/Entregas/Checklist/gestaoDeProjetos.md",
+  "sourceDirName": "Entregas/Checklist",
+  "slug": "/Entregas/Checklist/gestaoDeProjetos",
+  "permalink": "/IHC_2025.2_Grupo02/docs/Entregas/Checklist/gestaoDeProjetos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Entregas/Checklist/gestaoDeProjetos.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Geração de Conteúdo",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Entregas/Checklist/geracaoDeConteudo"
+  },
+  "next": {
+    "title": "Design",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Entregas/Checklist/Design"
+  }
+}

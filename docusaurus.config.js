@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Projeto IHC',
+  title: 'VerificaAAA',
   tagline: 'Interação Humano Computador',
   favicon: 'img/favicon.ico',
 
@@ -83,7 +83,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Projeto IHC',
+        title: 'VerificaAAA',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -93,7 +93,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentação',
           },
           {
             href: 'https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git',

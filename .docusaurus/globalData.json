@@ -8,8 +8,33 @@
           "label": "Next",
           "isLast": true,
           "path": "/IHC_2025.2_Grupo02/docs",
-          "mainDocId": "intro",
+          "mainDocId": "Entregas/sumarioUK",
           "docs": [
+            {
+              "id": "Checklist/desenvolvimentoWeb",
+              "path": "/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Checklist/Design",
+              "path": "/IHC_2025.2_Grupo02/docs/Checklist/Design",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Checklist/FerramentasAcessibilidade",
+              "path": "/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Checklist/geracaoDeConteudo",
+              "path": "/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Checklist/gestaoDeProjetos",
+              "path": "/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos",
+              "sidebar": "tutorialSidebar"
+            },
             {
               "id": "Entregas/checklistUK",
               "path": "/IHC_2025.2_Grupo02/docs/Entregas/checklistUK",
@@ -21,13 +46,13 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "intro",
-              "path": "/IHC_2025.2_Grupo02/docs/intro",
+              "id": "/category/entregas-do-guia",
+              "path": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/entregas-do-guia",
-              "path": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia",
+              "id": "/category/checklist-geral",
+              "path": "/IHC_2025.2_Grupo02/docs/category/checklist-geral",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -35,8 +60,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/IHC_2025.2_Grupo02/docs/intro",
-                "label": "intro"
+                "path": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia",
+                "label": "Entregas do Guia"
               }
             }
           }

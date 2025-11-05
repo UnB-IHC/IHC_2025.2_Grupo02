@@ -4,7 +4,7 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "Projeto IHC",
+  "title": "VerificaAAA",
   "tagline": "Interação Humano Computador",
   "favicon": "img/favicon.ico",
   "future": {
@@ -77,7 +77,7 @@ export default {
       "disableSwitch": false
     },
     "navbar": {
-      "title": "Projeto IHC",
+      "title": "VerificaAAA",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.svg"
@@ -87,7 +87,7 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Tutorial"
+          "label": "Documentação"
         },
         {
           "href": "https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git",

@@ -1,0 +1,23 @@
+{
+  "id": "Checklist/FerramentasAcessibilidade",
+  "title": "Ferramentas de Acessibilidade",
+  "description": "Frameworks e Ferramentas de Testes Automatizados",
+  "source": "@site/docs/Checklist/FerramentasAcessibilidade.md",
+  "sourceDirName": "Checklist",
+  "slug": "/Checklist/FerramentasAcessibilidade",
+  "permalink": "/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Checklist/FerramentasAcessibilidade.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Design",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Checklist/Design"
+  }
+}
