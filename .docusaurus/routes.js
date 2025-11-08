@@ -44,67 +44,49 @@ export default [
   },
   {
     path: '/IHC_2025.2_Grupo02/docs',
-    component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '9f5'),
+    component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '54a'),
     routes: [
       {
         path: '/IHC_2025.2_Grupo02/docs',
-        component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '9d1'),
+        component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '20f'),
         routes: [
           {
             path: '/IHC_2025.2_Grupo02/docs',
-            component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '07e'),
+            component: ComponentCreator('/IHC_2025.2_Grupo02/docs', 'f95'),
             routes: [
               {
-                path: '/IHC_2025.2_Grupo02/docs/category/checklist-geral',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/category/checklist-geral', '33c'),
+                path: '/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb', '87c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/IHC_2025.2_Grupo02/docs/category/entregas-do-guia',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/category/entregas-do-guia', 'a8f'),
+                path: '/IHC_2025.2_Grupo02/docs/Design',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Design', '79b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb', 'db5'),
+                path: '/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade', '928'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/IHC_2025.2_Grupo02/docs/Checklist/Design',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/Design', 'e89'),
+                path: '/IHC_2025.2_Grupo02/docs/geracaoDeConteudo',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/geracaoDeConteudo', 'c9f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade', 'bf2'),
+                path: '/IHC_2025.2_Grupo02/docs/gestaoDeProjetos',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/gestaoDeProjetos', 'f3f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo', 'bc5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos', '129'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/IHC_2025.2_Grupo02/docs/Entregas/checklistUK',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Entregas/checklistUK', 'b49'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK',
-                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK', '44d'),
+                path: '/IHC_2025.2_Grupo02/docs/overview',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/overview', '006'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

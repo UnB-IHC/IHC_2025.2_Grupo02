@@ -49,54 +49,42 @@
     },
     "content": "content---ihc-2025-2-grupo-02-markdown-page-393-017"
   },
-  "/IHC_2025.2_Grupo02/docs-9f5": {
+  "/IHC_2025.2_Grupo02/docs-54a": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---ihc-2025-2-grupo-02-docsaba-9e6"
     }
   },
-  "/IHC_2025.2_Grupo02/docs-9d1": {
+  "/IHC_2025.2_Grupo02/docs-20f": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---ihc-2025-2-grupo-02-docs-267-445"
   },
-  "/IHC_2025.2_Grupo02/docs-07e": {
+  "/IHC_2025.2_Grupo02/docs-f95": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/IHC_2025.2_Grupo02/docs/category/checklist-geral-33c": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---ihc-2025-2-grupo-02-docs-category-checklist-geralf-74-c26"
-  },
-  "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia-a8f": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---ihc-2025-2-grupo-02-docs-category-entregas-do-guia-723-cfe"
-  },
-  "/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb-db5": {
+  "/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb-87c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-checklist-desenvolvimento-web-5-e-9-6d2"
+    "content": "content---ihc-2025-2-grupo-02-docs-desenvolvimento-web-889-eb5"
   },
-  "/IHC_2025.2_Grupo02/docs/Checklist/Design-e89": {
+  "/IHC_2025.2_Grupo02/docs/Design-79b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-checklist-design-5-e-6-976"
+    "content": "content---ihc-2025-2-grupo-02-docs-designfd-7-c88"
   },
-  "/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade-bf2": {
+  "/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade-928": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-checklist-ferramentas-acessibilidadee-5-d-597"
+    "content": "content---ihc-2025-2-grupo-02-docs-ferramentas-acessibilidadee-32-e1a"
   },
-  "/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo-bc5": {
+  "/IHC_2025.2_Grupo02/docs/geracaoDeConteudo-c9f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-checklist-geracao-de-conteudo-6-b-6-d17"
+    "content": "content---ihc-2025-2-grupo-02-docs-geracao-de-conteudob-9-c-56e"
   },
-  "/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos-129": {
+  "/IHC_2025.2_Grupo02/docs/gestaoDeProjetos-f3f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-checklist-gestao-de-projetosc-57-bce"
+    "content": "content---ihc-2025-2-grupo-02-docs-gestao-de-projetos-976-478"
   },
-  "/IHC_2025.2_Grupo02/docs/Entregas/checklistUK-b49": {
+  "/IHC_2025.2_Grupo02/docs/overview-006": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-entregas-checklist-uk-0-f-2-340"
-  },
-  "/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK-44d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---ihc-2025-2-grupo-02-docs-entregas-sumario-uk-4-f-2-f91"
+    "content": "content---ihc-2025-2-grupo-02-docs-overview-188-e3f"
   },
   "/IHC_2025.2_Grupo02/-d09": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",

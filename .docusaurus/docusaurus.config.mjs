@@ -30,8 +30,8 @@ export default {
   },
   "url": "https://your-docusaurus-site.example.com",
   "baseUrl": "/IHC_2025.2_Grupo02/",
-  "organizationName": "facebook",
-  "projectName": "docusaurus",
+  "organizationName": "UnB-IHC",
+  "projectName": "IHC_2025.2_Grupo02",
   "onBrokenLinks": "throw",
   "i18n": {
     "defaultLocale": "en",
@@ -90,6 +90,12 @@ export default {
           "label": "Documentação"
         },
         {
+          "type": "doc",
+          "docId": "overview",
+          "position": "left",
+          "label": "Progresso Geral"
+        },
+        {
           "href": "https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git",
           "label": "GitHub",
           "position": "right"
@@ -99,7 +105,7 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "copyright": "Copyright © 2025 Projeto IHC, Inc. Built with Docusaurus.",
+      "copyright": "Copyright © 2025 Verifica AAA. Feito com Docusaurus.",
       "links": []
     },
     "prism": {

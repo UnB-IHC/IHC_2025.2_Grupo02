@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useChecklist } from './ChecklistContext';
 
-export default function CheckableBox() {
-  const [isChecked, setIsChecked] = useState(false);
-  const { registerCheckbox, toggleCheckbox } = useChecklist();
+export default function CheckableBox({ id }) {
+  const { isChecked, toggleCheck } = useChecklist();
 
-  // 1. Quando o componente é inciazilado ele se registra no Contexto
-  useEffect(() => {
-    registerCheckbox();
-  }, [registerCheckbox]);
+  if (!id) {
+    // Erro para garantir que o ID foi passado
+    throw new Error("CheckableBox precisa de uma 'id' prop! Ex: <CheckableBox id='meu-id-unica' />");
+  }
 
-  // 2. Quando o usuário clica
-  const handleChange = (e) => {
-    const checked = e.target.checked;
-    setIsChecked(checked);
-    toggleCheckbox(checked);
+  // Pergunta ao contexto se está marcada
+  const checked = isChecked(id);
+
+  // Avisa ao contexto para inverter o estado
+  const handleChange = () => {
+    toggleCheck(id);
   };
 
   return (
     <input
       type="checkbox"
-      checked={isChecked}
+      checked={checked}
       onChange={handleChange}
       style={{
         width: '1.25rem',

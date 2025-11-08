@@ -27,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'UnB-IHC', // Usually your GitHub org/user name.
+  projectName: 'IHC_2025.2_Grupo02', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -96,15 +96,22 @@ const config = {
             label: 'Documentação',
           },
           {
+            type: 'doc',
+            docId: 'overview',
+            position: 'left',
+            label: 'Progresso Geral',
+          },
+          {
             href: 'https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git',
             label: 'GitHub',
             position: 'right',
           },
+          
         ],
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Projeto IHC, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Verifica AAA. Feito com Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

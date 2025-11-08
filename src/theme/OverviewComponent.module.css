@@ -1,0 +1,45 @@
+.overviewMain {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.overviewContainer {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 100px;
+}
+
+.overviewContainer h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.overviewContainer p {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2rem;
+}
+
+.totalProgress {
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 300px; 
+}
+
+.divider {
+  width: 100%;
+  border-color: var(--ifm-color-emphasis-200);
+  margin: 2rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}

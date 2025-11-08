@@ -8,51 +8,36 @@
           "label": "Next",
           "isLast": true,
           "path": "/IHC_2025.2_Grupo02/docs",
-          "mainDocId": "Entregas/sumarioUK",
+          "mainDocId": "desenvolvimentoWeb",
           "docs": [
             {
-              "id": "Checklist/desenvolvimentoWeb",
-              "path": "/IHC_2025.2_Grupo02/docs/Checklist/desenvolvimentoWeb",
+              "id": "desenvolvimentoWeb",
+              "path": "/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "Checklist/Design",
-              "path": "/IHC_2025.2_Grupo02/docs/Checklist/Design",
+              "id": "Design",
+              "path": "/IHC_2025.2_Grupo02/docs/Design",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "Checklist/FerramentasAcessibilidade",
-              "path": "/IHC_2025.2_Grupo02/docs/Checklist/FerramentasAcessibilidade",
+              "id": "FerramentasAcessibilidade",
+              "path": "/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "Checklist/geracaoDeConteudo",
-              "path": "/IHC_2025.2_Grupo02/docs/Checklist/geracaoDeConteudo",
+              "id": "geracaoDeConteudo",
+              "path": "/IHC_2025.2_Grupo02/docs/geracaoDeConteudo",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "Checklist/gestaoDeProjetos",
-              "path": "/IHC_2025.2_Grupo02/docs/Checklist/gestaoDeProjetos",
+              "id": "gestaoDeProjetos",
+              "path": "/IHC_2025.2_Grupo02/docs/gestaoDeProjetos",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "Entregas/checklistUK",
-              "path": "/IHC_2025.2_Grupo02/docs/Entregas/checklistUK",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "Entregas/sumarioUK",
-              "path": "/IHC_2025.2_Grupo02/docs/Entregas/sumarioUK",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/entregas-do-guia",
-              "path": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/checklist-geral",
-              "path": "/IHC_2025.2_Grupo02/docs/category/checklist-geral",
+              "id": "overview",
+              "path": "/IHC_2025.2_Grupo02/docs/overview",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -60,8 +45,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/IHC_2025.2_Grupo02/docs/category/entregas-do-guia",
-                "label": "Entregas do Guia"
+                "path": "/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb",
+                "label": "desenvolvimentoWeb"
               }
             }
           }

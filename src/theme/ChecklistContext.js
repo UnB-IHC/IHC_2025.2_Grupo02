@@ -1,28 +1,67 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// 1. Criar o Contexto
 const ChecklistContext = createContext(undefined);
 
-// 2. Criar o Provedor (que armazena os dados)
+// Função para carregar o estado do localStorage
+const loadState = () => {
+  if (typeof window === 'undefined') {
+    return {};
+  }
+  try {
+    const serializedState = localStorage.getItem('checklistState');
+    if (serializedState === null) {
+      return {}; // Nenhum estado salvo
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    console.error("Erro ao carregar o estado do checklist:", err);
+    return {};
+  }
+};
+
+const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('checklistState', serializedState);
+  } catch (err) {
+    console.error("Erro ao salvar o estado do checklist:", err);
+  }
+};
+
 export function ChecklistProvider({ children }) {
-  const [totalCount, setTotalCount] = useState(0);
-  const [checkedCount, setCheckedCount] = useState(0);
+  const [checkedState, setCheckedState] = useState(loadState());
 
-  // Função para uma nova caixa se "registrar"
-  const registerCheckbox = useCallback(() => {
-    setTotalCount((count) => count + 1);
-  }, []); // O useCallback garante que a função não mude
+  // Salva no localStorage sempre que o estado mudar
+  useEffect(() => {
+    saveState(checkedState);
+  }, [checkedState]);
 
-  // Função para "avisar" que uma caixa foi marcada/desmarcada
-  const toggleCheckbox = useCallback((isChecked) => {
-    setCheckedCount((count) => count + (isChecked ? 1 : -1));
-  }, []);
+  // Função para marcar/desmarcar
+  const toggleCheck = (id) => {
+    setCheckedState((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id], // Inverte o valor (true vira false, etc.)
+    }));
+  };
 
+  // Função para saber se um ID está marcado
+  const isChecked = (id) => {
+    return !!checkedState[id]; // Retorna true ou false
+  };
+
+  // Função para um contador obter a contagem de uma lista de IDs
+  const getCheckedCount = (ids) => {
+    // Filtra os IDs da lista que estão marcados no estado
+    return ids.reduce((count, id) => {
+      return checkedState[id] ? count + 1 : count;
+    }, 0);
+  };
+
+  // Os valores que o Contexto fornece
   const value = {
-    totalCount,
-    checkedCount,
-    registerCheckbox,
-    toggleCheckbox,
+    toggleCheck,
+    isChecked,
+    getCheckedCount,
   };
 
   return (
@@ -32,7 +71,7 @@ export function ChecklistProvider({ children }) {
   );
 }
 
-// 3. Criar o "Hook" (para os componentes acessarem os dados)
+// O Hook não muda
 export function useChecklist() {
   const context = useContext(ChecklistContext);
   if (context === undefined) {
