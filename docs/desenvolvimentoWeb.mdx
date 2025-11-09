@@ -13,106 +13,150 @@ import { CHECKLIST_DESENVOLVIMENTO_WEB_IDS } from '@site/src/theme/ChecklistIds'
 
 ## Imagens
 
-* <CheckableBox id='dev-img-1' /> Adicionar `alt` para imagens, botões-imagem, gráficos e imagens de mapas com pontos de acesso.
-* <CheckableBox id='dev-img-2' /> Adicionar `alt=""` para imagens decorativas que não tem significado.
-* <CheckableBox id='dev-img-3' /> Incluir a descrição no `alt` para imagens que contém texto.
-* <CheckableBox id='dev-img-4'/> Garantir contraste adequado entre texto da imagem e plano de fundo.
-* <CheckableBox id='dev-img-5'/> Evitar textos com fontes muito pequenas dentro da imagem.
+* <CheckableBox id='dev-img-1' /> Existe `alt` para imagens, botões-imagem, gráficos e imagens de mapas com pontos de acesso. [1]
+* <CheckableBox id='dev-img-2' /> Existe `alt=""` para imagens decorativas que não tem significado. [1]
+* <CheckableBox id='dev-img-3' /> Incluir a descrição no `alt` para imagens que contém texto. [1]
+* <CheckableBox id='dev-img-4' /> Existe contraste adequado entre texto da imagem e plano de fundo. [18]
+* <CheckableBox id='dev-img-5' /> Pouca presença de textos com fontes muito pequenas dentro da imagem. [18]
 
 ## Vídeos
 
-* <CheckableBox id='dev-vid-1'/> Adicionar legendas para áudio em vídeos existentes.
-* <CheckableBox id='dev-vid-2'/> Evitar conteúdo com flashes (gatilhos para convulsões) ou manter abaixo dos limites.
-* <CheckableBox id='dev-vid-3'/> Adicionar botão de controle de legenda e audiodescrição.
+* <CheckableBox id='dev-vid-1'/> Existe legenda para áudio nos vídeos. [2]
+* <CheckableBox id='dev-vid-2'/> Evitar conteúdo com flashes (gatilhos para convulsões) ou manter abaixo dos limites. [3]
+* <CheckableBox id='dev-vid-3'/> Existe transcrição textual para conteúdos em áudio. [1]
 
 ## Controles
 
-* <CheckableBox id='dev-ctrl-1'/> Adicionar `href` para links.
-* <CheckableBox id='dev-ctrl-2'/> Adicionar underline nos links.
-* <CheckableBox id='dev-ctrl-3'/> Adicionar estados de foco em campos de entrada, botões, e elementos interativos.
-* <CheckableBox id='dev-ctrl-4'/> Adicionar `type="button"` nos botões.
-* <CheckableBox id='dev-ctrl-5'/> Adicionar skip-link (link para pular) para o conteúdo principal.
-* <CheckableBox id='dev-ctrl-6'/> Identifique e comunique links que abrem em uma nova guia ou janela.
-* <CheckableBox id='dev-ctrl-7'/> Garantir que todos os botões tenham nome acessível por leitores de tela.
+* <CheckableBox id='dev-ctrl-1'/> Os links possuem `href` correto. [4]
+* <CheckableBox id='dev-ctrl-2'/> Existe underline nos links. [5]
+* <CheckableBox id='dev-ctrl-3'/> Existe estados de foco em campos de entrada, botões, e elementos interativos. [6]
+* <CheckableBox id='dev-ctrl-4'/> O foco do teclado é visível e lógico em toda a navegação. [6]
+* <CheckableBox id='dev-ctrl-5'/> Existe a navegação skip-link (link para pular) para o conteúdo principal. [7]
+* <CheckableBox id='dev-ctrl-6'/> Os links que levam à outra página são identificados e indicados. [8]
+* <CheckableBox id='dev-ctrl-7'/> Todos os botões tem nome acessível (`type="button"`, `type="submit"`). [4]
 
 ## Formulário
 
-* <CheckableBox id='dev-form-1'/> Adicionar `label` para os campos de entradas associadas ao elemento correspondente.
-* <CheckableBox id='dev-form-2'/> Adicionar `<fildset>` e `<legend>` para seção no formulário.
-* <CheckableBox id='dev-form-3'/> Adicionar `autocomplete` para campos de entrada.
-* <CheckableBox id='dev-form-4'/> Exibir errors (erros) de entrada acima do formulário, após envio.
-* <CheckableBox id='dev-form-5'/> Adicionar `aria-describedby` para os campos de entrada.
-* <CheckableBox id='dev-form-6'/> Exibir mensagens de erro e sucesso não só visualmente.
-* <CheckableBox id='dev-form-7'/> Utilizar validação em tempo real acessível para indicar campos obrigatórios ou incorretos.
+* <CheckableBox id='dev-form-1'/> Os campos de entrada possuem `label` associadas ao elemento correspondente. [4]
+* <CheckableBox id='dev-form-2'/> Agrupadores como `<fildset>` e `<legend>` foram usados para seção no formulário. [4]
+* <CheckableBox id='dev-form-3'/> Campos de entrada possuem `autocomplete` devidamente configurado. [10]
+* <CheckableBox id='dev-form-4'/> Exibe erros (errors) de entrada acima do formulário, após envio.
+* <CheckableBox id='dev-form-5'/> Existe `aria-describedby` para os campos de entrada.
+* <CheckableBox id='dev-form-6'/> Descrição clara de mensagem de erro e sucesso. [5]
+* <CheckableBox id='dev-form-7'/> Utilizar validação em tempo real acessível para indicar campos obrigatórios ou incorretos. [9]
 
 ## Mídia
 
-* <CheckableBox id='dev-media-1'/> Impedir `autoplay` para vídeos e audios.
-* <CheckableBox id='dev-media-2'/> Adicionar `type` para botões e entradas.
-* <CheckableBox id='dev-media-3'/> Adicionar pausa para todas as mídias.
-* <CheckableBox id='dev-media-4'/> Adicionar transcrição para audios.
+* <CheckableBox id='dev-media-1'/> O `autoplay` para vídeos e audios está desabilitado por padrão. [11]
+* <CheckableBox id='dev-media-2'/> Para todos os botões e entradas, existe `type` válido. [4]
+* <CheckableBox id='dev-media-3'/> Existe pausa para todas as mídias. [11]
+* <CheckableBox id='dev-media-4'/> Existe transcrição para audios. [1]
 
 ## Semântica
 
-* <CheckableBox id='dev-sem-1'/> Uso de elementos nativos HTML.
-* <CheckableBox id='dev-sem-2'/> Fluxo continuo e Lógico.
-* <CheckableBox id='dev-sem-3'/> Tem descrições que podem ser facilmente compreendidas.
-* <CheckableBox id='dev-sem-4'/> Tem a semântica correta.
-* <CheckableBox id='dev-sem-5'/> É objetivo nos rótulos.
+* <CheckableBox id='dev-sem-1'/> HTML tem uso nativo dos componentes `header, nav, main, ...`. [4] [14]
+* <CheckableBox id='dev-sem-2'/> A hierarquia dos compoenentes segue um fluxo lógico.
+* <CheckableBox id='dev-sem-3'/> As descrições podem ser facilmente compreendidas. [16]
+* <CheckableBox id='dev-sem-4'/> Os compoenentes possuem textos claros e objetivos. [16]
+* <CheckableBox id='dev-sem-5'/> Tabelas são usadas apenas para dados tabulares. [4]
 
 ## Texto
 
-* <CheckableBox id='dev-txt-1'/> Evitar o uso de textos dentro de imagens.
-* <CheckableBox id='dev-txt-2'/> Redimensiona os textos na página, aumentando o zoom em até 200%.
-* <CheckableBox id='dev-txt-3'/> Alturas das fontes não é fixa.
+* <CheckableBox id='dev-txt-1'/> Evitar o uso de textos dentro de imagens. [1]
+* <CheckableBox id='dev-txt-2'/> Os textos na página podem ser redimensionados sem perda de conteúdo, aumentando o zoom em até 200%. [15]
+* <CheckableBox id='dev-txt-3'/> As fontes tem seu tamanho relativo (`em, rem`) e não fixo (`px`). [15]
 
 ## Teclado
-
-* <CheckableBox id='dev-key-1'/> Funcionalidades da página web estão disponíveis por teclado.
-* <CheckableBox id='dev-key-2'/> Quando se tem o mouseover é permitido o uso de teclado.
-* <CheckableBox id='dev-key-3'/> Foco visível remova elementos focalizáveis invisíveis.
-* <CheckableBox id='dev-key-4'/> Adicione o `.hover`, `.focus` para tornar o foco visível.
-* <CheckableBox id='dev-key-5'/> Permite/visa o uso de Atalhos de teclado como o TAB.
-* <CheckableBox id='dev-key-6'/> Primeiro item interativo da página é um link para o conteúdo principal.
-* <CheckableBox id='dev-key-7'/> Garantir ordem lógica de navegação por teclado.
+* <CheckableBox id='dev-key-1'/> Funcionalidades da página web estão disponíveis por teclado. [12]
+* <CheckableBox id='dev-key-2'/> Em um componentes com mouseover é permitido o uso de teclado. [12]
+* <CheckableBox id='dev-key-3'/> Foram evitados armadilhas de foco ( Um foco que não sai de um modal). [12]
+* <CheckableBox id='dev-key-4'/> Uso de `.hover`, `.focus` para tornar o foco visível. [6]
+* <CheckableBox id='dev-key-5'/> Permite o uso de Atalhos de teclado como o TAB. [12]
+* <CheckableBox id='dev-key-6'/> Primeiro item interativo da página é um link para o conteúdo principal. [7]
+* <CheckableBox id='dev-key-7'/> Existe ordem lógica de navegação por teclado. [12]
 
 ## Título
 
-* <CheckableBox id='dev-title-1'/> A hierarquia de conteúdo da página é definida por sua lógica não pelo tamanaho do texto.
-* <CheckableBox id='dev-title-2'/> Use elementos de título `h1` `h2` `h3` para apresentar o conteúdo.
-* <CheckableBox id='dev-title-3'/> Não pular níveis lógicos.
-* <CheckableBox id='dev-title-4'/> Toda página contem um título `h1` descrevendo a página.
+* <CheckableBox id='dev-title-1'/> A hierarquia de conteúdo da página é definida por sua lógica e não pelo tamanaho do texto. [16]
+* <CheckableBox id='dev-title-2'/> Use elementos de título `h1` `h2` `h3` para apresentar o conteúdo. [16]
+* <CheckableBox id='dev-title-3'/> Não pular níveis lógicos. [16]
+* <CheckableBox id='dev-title-4'/> Toda página contem um título `h1` descrevendo a página. [16]
 
 ## Tabela
 
-* <CheckableBox id='dev-tbl-1'/> Use o `table` para elementos em formato de tabela.
-* <CheckableBox id='dev-tbl-2'/> Insira cabeçalhos para explicar os dados, use `th` com `scope` correto.
-* <CheckableBox id='dev-tbl-3'/> Use o `caption` elemento para fornecer um título para a tabela.
-* <CheckableBox id='dev-tbl-4'/> Não usar tabelas para layout.
+* <CheckableBox id='dev-tbl-1'/> Elementos em formatos de tabela usam `table`. [4]
+* <CheckableBox id='dev-tbl-2'/> Uso de `th` com `scope` correto. [4]
+* <CheckableBox id='dev-tbl-3'/> Uso do `caption` para fornecer uma legenda descritiva para a tabela. [4] [16]
+* <CheckableBox id='dev-tbl-4'/> Não usar tabelas para layout. [4]
 
 ## Modais
 
-* <CheckableBox id='dev-modal-1'/> Deve ser fácil fechar.
-* <CheckableBox id='dev-modal-2'/> Permiti o uso da tecla escape ESC.
-* <CheckableBox id='dev-modal-3'/> A interação é uma tarefa simples.
-* <CheckableBox id='dev-modal-4'/> Evita modais em tela cheia.
-* <CheckableBox id='dev-modal-5'/> Não abrir um modal a partir de outro modal.
-* <CheckableBox id='dev-modal-6'/> Gerenciar foco corretamente dentro do modal.
+* <CheckableBox id='dev-modal-1'/> São fáceis de achar. [18] [NBR]
+* <CheckableBox id='dev-modal-2'/> Permite o uso da tecla escape ESC. [12] [18] [NBR]
+* <CheckableBox id='dev-modal-3'/> A interação é uma tarefa simples. [18] [NBR]
+* <CheckableBox id='dev-modal-4'/> Evita modais em tela cheia. [18] [NBR]
+* <CheckableBox id='dev-modal-5'/> Não abrir um modal a partir de outro modal. [18] [NBR]
+* <CheckableBox id='dev-modal-6'/> Gerenciar foco corretamente dentro do modal. [12] [NBR]
 
 ## Dispositivo Móvel e tocável
 
-* <CheckableBox id='dev-mob-1'/> O site pode ser rotacionado para qualquer orientação.
-* <CheckableBox id='dev-mob-2'/> Impedir rolgem horizontal.
-* <CheckableBox id='dev-mob-3'/> Garantir que botões e links possam ser ativados facilmente.
-* <CheckableBox id='dev-mob-4'/> Garantir espaço suficiente entre elementos interativos.
-* <CheckableBox id='dev-mob-5'/> Garantir acessibilidade para gestos de toque.
+* <CheckableBox id='dev-mob-1'/> O site pode ser rotacionado para qualquer orientação. [13] [14] [NBR]
+* <CheckableBox id='dev-mob-2'/> Impedir rolgem horizontal. [15] [NBR]
+* <CheckableBox id='dev-mob-3'/> Botões e links possam ser ativados facilmente. [17]
+* <CheckableBox id='dev-mob-4'/> Existe espaço suficiente entre elementos interativos. [17]
+* <CheckableBox id='dev-mob-5'/> Exite acessibilidade para gestos de toque. [NBR]
 
 ## Ferramentas e extras
 
-* <CheckableBox id='dev-extra-1'/> Permiti pausar, parar ou ocultar conteúdo em movimento.
+* <CheckableBox id='dev-extra-1'/> Permite pausar, parar ou ocultar conteúdo em movimento.
 * <CheckableBox id='dev-extra-2'/> Usar Breadcrumbs informando a localização atual nas páginas.
-* <CheckableBox id='dev-extra-3'/> Colocar página ou área de esclarecimento de dúvidas e dicas de acessibilidade.
-* <CheckableBox id='dev-extra-4'/> Áreas clicáveis com no mínimo 44px (pixels) de altura e 44px de largura.
-* <CheckableBox id='dev-extra-5'/> No caso de captcha garanta que seja simples de entender e tenha alternativas para pessoas com deficiência.
-* <CheckableBox id='dev-extra-6'/> Incluir um campo de busca.
-* <CheckableBox id='dev-extra-7'/> Indicar idioma principal da página com `lang=""` na tag `<html>`.
+* <CheckableBox id='dev-extra-3'/> Colocar página ou área de esclarecimento de dúvidas e dicas de acessibilidade. [18] [NBR]
+* <CheckableBox id='dev-extra-4'/> Áreas clicáveis com no mínimo 44px (pixels) de altura e 44px de largura. [17]
+* <CheckableBox id='dev-extra-5'/> O captcha é simples e tem alternativas para pessoas com deficiência. [18] [NBR]
+* <CheckableBox id='dev-extra-6'/> Incluir um campo de busca. [18] [NBR]
+* <CheckableBox id='dev-extra-7'/> Indicar idioma principal da página com `lang=""` na tag `<html>`. [18] [NBR]
+
+---
+
+## Referências Bibliográficas
+
+[1] WCAG 2.2 Understanding Docs. SC 1.1.1 Non-text Content (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html. Acesso em: 9 Mai. 2024.
+
+[2] WCAG 2.2 Understanding Docs. SC 1.2.2 Captions (Prerecorded) (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html. Acesso em: 9 Mai. 2024.
+
+[3] WCAG 2.2 Understanding Docs. SC 2.3.1 Three Flashes or Below Threshold (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html. Acesso em: 9 Mai. 2024.
+
+[4] WCAG 2.2 Understanding Docs. SC 1.3.1 Info and Relationships (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html. Acesso em: 9 Mai. 2024.
+
+[5] WCAG 2.2 Understanding Docs. SC 1.4.1 Use of Color (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html. Acesso em: 9 Mai. 2024.
+
+[6] WCAG 2.2 Understanding Docs. SC 2.4.7 Focus Visible (Level AA). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html. Acesso em: 9 Mai. 2024.
+
+[7] WCAG 2.2 Understanding Docs. SC 2.4.1 Bypass Blocks (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html. Acesso em: 9 Mai. 2024.
+
+[8] WCAG 2.2 Understanding Docs. G201 Giving users advanced warning when opening a new window. Disponível em: https://www.w3.org/WAI/WCAG22/Techniques/general/G201. Acesso em: 9 Mai. 2024.
+
+[9] WCAG 2.2 Understanding Docs. SC 3.2.2 On Input (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/on-input.html. Acesso em: 9 Mai. 2024.
+
+[10] WCAG 2.2 Understanding Docs. SC 1.3.5 Identify Input Purpose (Level AA). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html. Acesso em: 9 Mai. 2024.
+
+[11] WCAG 2.2 Understanding Docs. SC 1.4.2 Audio Control (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html. Acesso em: 9 Mai. 2024.
+
+[12] WCAG 2.2 Understanding Docs. SC 2.1.1 Keyboard (Level A). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html. Acesso em: 9 Mai. 2024.
+
+[13] WCAG 2.2 Understanding Docs. SC 1.3.4 Orientation (Level AA). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/orientation.html. Acesso em: 9 Mai. 2024.
+
+[14] WCAG 2.2 Understanding Docs. SC 4.1.1 Orientation (Level). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/parsing.html. Acesso em: 9 Mai. 2024.
+
+[15] WCAG 2.2 Understanding Docs. SC 1.4.10 Reflow (Level AA). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html. Acesso em: 9 Mai. 2024.
+
+[16] WCAG 2.2 Understanding SC 2.4.6 Headings and Labels (Level AA). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html. Acesso em: 9 Mai. 2024.
+
+[17] WCAG 2.2 Understanding Docs. SC 2.5.5 Target Size (Enhanced) (Level AAA). Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html. Acesso em: 9 Mai. 2024.
+
+[18] GUIA DE BOAS PRÁTICAS PARA ACESSIBILIDADE DIGITAL. Disponível em: https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html. Acesso em: 9 Mai. 2024.
+
+[NBR] ABNT NBR 16225:2025, Acessibilidade em conteúdo e aplicações web – Requisitos. Disponível em: https://mwpt.com.br/wp-content/uploads/2025/04/ABNT-NBR-16225-Acessibilidade-Digital.pdf
+
+## Bibliografia
+DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. Guia de Boas Práticas para Acessibilidade Digital. Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf. Acesso em: 9 Mai. 2024.
