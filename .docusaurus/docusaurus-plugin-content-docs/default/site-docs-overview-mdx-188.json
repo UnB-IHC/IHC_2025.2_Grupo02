@@ -1,0 +1,22 @@
+{
+  "id": "overview",
+  "title": "Visão Geral do Progresso",
+  "description": "",
+  "source": "@site/docs/overview.mdx",
+  "sourceDirName": ".",
+  "slug": "/overview",
+  "permalink": "/IHC_2025.2_Grupo02/docs/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/overview.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Visão Geral do Progresso"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Ferramentas de Acessibilidade",
+    "permalink": "/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade"
+  }
+}
