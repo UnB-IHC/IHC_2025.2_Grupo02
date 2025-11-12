@@ -8,6 +8,7 @@ import {
   CHECKLIST_DESIGN_CONTEUDO_IDS,
   CHECKLIST_GERACAO_CONTEUDO_IDS,
   CHECKLIST_GESTAO_PROJETOS_IDS,
+  CHECKLIST_HEURISTICA_NEILSEN_IDS, // <- 1. Importar a nova lista
   ALL_SITE_IDS
 } from '@site/src/theme/ChecklistIds';
 
@@ -27,6 +28,7 @@ export default function OverviewComponent() {
   const designProgress = getProgress(getCheckedCount, CHECKLIST_DESIGN_CONTEUDO_IDS);
   const conteudoProgress = getProgress(getCheckedCount, CHECKLIST_GERACAO_CONTEUDO_IDS);
   const gestaoProgress = getProgress(getCheckedCount, CHECKLIST_GESTAO_PROJETOS_IDS);
+  const neilsenProgress = getProgress(getCheckedCount, CHECKLIST_HEURISTICA_NEILSEN_IDS); // <- 2. Calcular o novo progresso
   const totalProgress = getProgress(getCheckedCount, ALL_SITE_IDS);
 
   return (
@@ -65,6 +67,11 @@ export default function OverviewComponent() {
           <RadialProgressBar
             percentage={gestaoProgress.percentage}
             label={`Gestão de Projetos (${gestaoProgress.checked} / ${gestaoProgress.total})`}
+          />
+
+          <RadialProgressBar
+            percentage={neilsenProgress.percentage}
+            label={`Heurísticas de Nielsen (${neilsenProgress.checked} / ${neilsenProgress.total})`}
           />
 
         </div>

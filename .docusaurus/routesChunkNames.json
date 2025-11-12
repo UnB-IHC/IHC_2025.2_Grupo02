@@ -1,0 +1,100 @@
+{
+  "/IHC_2025.2_Grupo02/__docusaurus/debug-00c": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/__docusaurus/debug/config-75e": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/__docusaurus/debug/content-7ba": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    },
+    "__props": "__props---ihc-2025-2-grupo-02-docusaurus-debug-content-9-e-2-4ea"
+  },
+  "/IHC_2025.2_Grupo02/__docusaurus/debug/globalData-9d9": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/__docusaurus/debug/metadata-59c": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/__docusaurus/debug/registry-c11": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/__docusaurus/debug/routes-ceb": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docusaurus-debugb-38-fe6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/markdown-page-cba": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-markdown-pagea-74-60a"
+    },
+    "content": "content---ihc-2025-2-grupo-02-markdown-page-393-017"
+  },
+  "/IHC_2025.2_Grupo02/docs-e5a": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-docsaba-9e6"
+    }
+  },
+  "/IHC_2025.2_Grupo02/docs-e00": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---ihc-2025-2-grupo-02-docs-267-445"
+  },
+  "/IHC_2025.2_Grupo02/docs-9c7": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb-87c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-desenvolvimento-web-889-eb5"
+  },
+  "/IHC_2025.2_Grupo02/docs/Design-79b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-designfd-7-c88"
+  },
+  "/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade-928": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-ferramentas-acessibilidadee-32-e1a"
+  },
+  "/IHC_2025.2_Grupo02/docs/geracaoDeConteudo-c9f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-geracao-de-conteudob-9-c-56e"
+  },
+  "/IHC_2025.2_Grupo02/docs/gestaoDeProjetos-f3f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-gestao-de-projetos-976-478"
+  },
+  "/IHC_2025.2_Grupo02/docs/heuristicasNeilsen-725": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-heuristicas-neilsen-7-f-8-db3"
+  },
+  "/IHC_2025.2_Grupo02/docs/overview-006": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ihc-2025-2-grupo-02-docs-overview-188-e3f"
+  },
+  "/IHC_2025.2_Grupo02/-d09": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---ihc-2025-2-grupo-02-markdown-pagea-74-60a"
+    },
+    "config": "config---ihc-2025-2-grupo-02-5-e-9-5ff"
+  }
+}

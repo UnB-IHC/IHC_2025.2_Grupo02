@@ -1,0 +1,65 @@
+---
+sidebar_position: 5
+---
+
+# Heurísticas de Neilsen
+
+import CategoryProgress from '@site/src/theme/CategoryProgress';
+import CheckableBox from '@site/src/theme/CheckableBox';
+import { CHECKLIST_HEURISTICA_NEILSEN_IDS } from '@site/src/theme/ChecklistIds';
+
+<CategoryProgress idList={CHECKLIST_HEURISTICA_NEILSEN_IDS} title="Progresso de Conclusão"/>
+
+## 1. Visibilidade do status do sistema
+
+<CheckableBox id='hn-vis-1'/> O sistema informa ao usuário o que está acontecendo (feedback, status, loading) em tempo razoável.
+
+## 2. Correspondência entre o sistema e o mundo real
+
+<CheckableBox id='hn-mundo-real-1'/> O sistema usa a linguagem do usuário (palavras, frases, ícones familiares) e não jargões técnicos.
+
+<CheckableBox id='hn-mundo-real-2'/> A informação aparece em uma ordem natural e lógica.
+
+## 3. Controle e liberdade do usuário
+
+<CheckableBox id='hn-controle-1'/> O usuário possui "saídas de emergência" claramente marcadas para sair de estados indesejados (ex: "Cancelar").
+
+<CheckableBox id='hn-controle-2'/> Funções de "desfazer" (undo) e "refazer" (redo) estão disponíveis.
+
+## 4. Consistência e padrões
+
+<CheckableBox id='hn-consist-1'/> Elementos, palavras e ações significam a mesma coisa em todo o sistema.
+
+<CheckableBox id='hn-consist-2'/> O design segue as convenções da plataforma e da indústria.
+
+## 5. Prevenção de erros
+
+<CheckableBox id='hn-prev-1'/> O design previne ativamente a ocorrência de erros (ex: desabilitando botões, usando seletores de data).
+
+## 6. Reconhecimento em vez de memória
+
+<CheckableBox id='hn-recon-1'/> O usuário não precisa memorizar informações entre diferentes telas (objetos, ações e opções estão visíveis).
+
+## 7. Flexibilidade e eficiência de uso
+
+<CheckableBox id='hn-flex-1'/> A interface atende tanto usuários novatos quanto experientes.
+
+<CheckableBox id='hn-flex-2'/> Existem atalhos e aceleradores (ex: "repetir reserva") para usuários frequentes.
+
+## 8. Design estético e minimalista
+
+<CheckableBox id='hn-min-1'/> A interface não contém informações irrelevantes ou raramente necessárias.
+
+<CheckableBox id='hn-min-2'/> O conteúdo foca na tarefa principal do usuário sem distrações.
+
+## 9. Ajude os usuários a reconhecer, diagnosticar e recuperar de erros
+
+<CheckableBox id='hn-erro-1'/> Mensagens de erro são em linguagem clara e humana (sem códigos).
+
+<CheckableBox id='hn-erro-2'/> As mensagens indicam precisamente o problema e sugerem uma solução.
+
+## 10. Ajuda e documentação
+
+<CheckableBox id='hn-ajuda-1'/> A ajuda e documentação (se necessárias) são fáceis de pesquisar.
+
+<CheckableBox id='hn-ajuda-2'/> A ajuda é focada na tarefa do usuário, lista etapas concretas e não é muito extensa.
