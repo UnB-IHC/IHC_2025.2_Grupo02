@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auditor de Acessibilidade</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        width: 350px;
+        padding: 10px;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #results {
+        margin-top: 15px;
+      }
+      #score {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      ul {
+        padding-left: 20px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      li {
+        color: #d9534f; /* Vermelho para erros */
+        margin-bottom: 5px;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Auditoria WCAG</h3>
+    <button id="auditButton">Analisar Página Atual</button>
+    <div id="results">
+      <div id="score"></div>
+      <ul id="errorList"></ul>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
