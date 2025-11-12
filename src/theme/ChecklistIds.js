@@ -158,10 +158,31 @@ export const CHECKLIST_GESTAO_PROJETOS_IDS = [
   'gestao-plan-5', 'gestao-plan-6', 'gestao-plan-7', 'gestao-plan-8',
 ];
 
+export const CHECKLIST_HEURISTICA_NEILSEN_IDS = [
+  'hn-vis-1',
+  'hn-mundo-real-1',
+  'hn-mundo-real-2',
+  'hn-controle-1',
+  'hn-controle-2',
+  'hn-consist-1',
+  'hn-consist-2',
+  'hn-prev-1',
+  'hn-recon-1',
+  'hn-flex-1',
+  'hn-flex-2',
+  'hn-min-1',
+  'hn-min-2',
+  'hn-erro-1',
+  'hn-erro-2',
+  'hn-ajuda-1',
+  'hn-ajuda-2'
+]
+
 // Esta é a lista MESTRA de TODOS os IDs do site
 export const ALL_SITE_IDS = [
   ...CHECKLIST_DESENVOLVIMENTO_WEB_IDS,
   ...CHECKLIST_DESIGN_CONTEUDO_IDS,
   ...CHECKLIST_GERACAO_CONTEUDO_IDS,
   ...CHECKLIST_GESTAO_PROJETOS_IDS,
+  ...CHECKLIST_HEURISTICA_NEILSEN_IDS,
 ];

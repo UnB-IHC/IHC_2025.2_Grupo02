@@ -1,7 +1,7 @@
 {
   "id": "gestaoDeProjetos",
   "title": "Gestão de Projetos",
-  "description": "Personas",
+  "description": "Essa seção é inteiramente coberta pelo Guia de Boas Práticas e pela Norma Brasileira [NBR]",
   "source": "@site/docs/gestaoDeProjetos.mdx",
   "sourceDirName": ".",
   "slug": "/gestaoDeProjetos",
@@ -17,11 +17,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Geração de Conteúdo",
-    "permalink": "/IHC_2025.2_Grupo02/docs/geracaoDeConteudo"
+    "title": "Design e Conteúdo",
+    "permalink": "/IHC_2025.2_Grupo02/docs/Design"
   },
   "next": {
-    "title": "Ferramentas de Acessibilidade",
-    "permalink": "/IHC_2025.2_Grupo02/docs/FerramentasAcessibilidade"
+    "title": "Geração de Conteúdo",
+    "permalink": "/IHC_2025.2_Grupo02/docs/geracaoDeConteudo"
   }
 }

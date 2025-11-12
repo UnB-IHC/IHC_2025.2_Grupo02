@@ -36,6 +36,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "heuristicasNeilsen",
+              "path": "/IHC_2025.2_Grupo02/docs/heuristicasNeilsen",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "overview",
               "path": "/IHC_2025.2_Grupo02/docs/overview",
               "sidebar": "tutorialSidebar"

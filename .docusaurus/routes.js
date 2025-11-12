@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/IHC_2025.2_Grupo02/docs',
-    component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '54a'),
+    component: ComponentCreator('/IHC_2025.2_Grupo02/docs', 'e5a'),
     routes: [
       {
         path: '/IHC_2025.2_Grupo02/docs',
-        component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '20f'),
+        component: ComponentCreator('/IHC_2025.2_Grupo02/docs', 'e00'),
         routes: [
           {
             path: '/IHC_2025.2_Grupo02/docs',
-            component: ComponentCreator('/IHC_2025.2_Grupo02/docs', 'f95'),
+            component: ComponentCreator('/IHC_2025.2_Grupo02/docs', '9c7'),
             routes: [
               {
                 path: '/IHC_2025.2_Grupo02/docs/desenvolvimentoWeb',
@@ -81,6 +81,12 @@ export default [
               {
                 path: '/IHC_2025.2_Grupo02/docs/gestaoDeProjetos',
                 component: ComponentCreator('/IHC_2025.2_Grupo02/docs/gestaoDeProjetos', 'f3f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/IHC_2025.2_Grupo02/docs/heuristicasNeilsen',
+                component: ComponentCreator('/IHC_2025.2_Grupo02/docs/heuristicasNeilsen', '725'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

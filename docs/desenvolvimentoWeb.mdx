@@ -4,12 +4,11 @@ sidebar_position: 1
 
 # Desenvolvimento Web
 
-import ChecklistCounter from '@site/src/theme/ChecklistCounter';
 import CheckableBox from '@site/src/theme/CheckableBox';
-
+import CategoryProgress from '@site/src/theme/CategoryProgress';
 import { CHECKLIST_DESENVOLVIMENTO_WEB_IDS } from '@site/src/theme/ChecklistIds';
 
-<ChecklistCounter ids={CHECKLIST_DESENVOLVIMENTO_WEB_IDS} />
+<CategoryProgress idList={CHECKLIST_DESENVOLVIMENTO_WEB_IDS} title="Progresso de Conclusão" />
 
 ## Imagens
 
@@ -55,9 +54,9 @@ import { CHECKLIST_DESENVOLVIMENTO_WEB_IDS } from '@site/src/theme/ChecklistIds'
 ## Semântica
 
 * <CheckableBox id='dev-sem-1'/> HTML tem uso nativo dos componentes `header, nav, main, ...`. [4] [14]
-* <CheckableBox id='dev-sem-2'/> A hierarquia dos compoenentes segue um fluxo lógico.
+* <CheckableBox id='dev-sem-2'/> A hierarquia dos componentes segue um fluxo lógico.
 * <CheckableBox id='dev-sem-3'/> As descrições podem ser facilmente compreendidas. [16]
-* <CheckableBox id='dev-sem-4'/> Os compoenentes possuem textos claros e objetivos. [16]
+* <CheckableBox id='dev-sem-4'/> Os componentes possuem textos claros e objetivos. [16]
 * <CheckableBox id='dev-sem-5'/> Tabelas são usadas apenas para dados tabulares. [4]
 
 ## Texto
@@ -68,7 +67,7 @@ import { CHECKLIST_DESENVOLVIMENTO_WEB_IDS } from '@site/src/theme/ChecklistIds'
 
 ## Teclado
 * <CheckableBox id='dev-key-1'/> Funcionalidades da página web estão disponíveis por teclado. [12]
-* <CheckableBox id='dev-key-2'/> Em um componentes com mouseover é permitido o uso de teclado. [12]
+* <CheckableBox id='dev-key-2'/> Em componentes com mouseover é permitido o uso de teclado. [12]
 * <CheckableBox id='dev-key-3'/> Foram evitados armadilhas de foco ( Um foco que não sai de um modal). [12]
 * <CheckableBox id='dev-key-4'/> Uso de `.hover`, `.focus` para tornar o foco visível. [6]
 * <CheckableBox id='dev-key-5'/> Permite o uso de Atalhos de teclado como o TAB. [12]
@@ -77,7 +76,7 @@ import { CHECKLIST_DESENVOLVIMENTO_WEB_IDS } from '@site/src/theme/ChecklistIds'
 
 ## Título
 
-* <CheckableBox id='dev-title-1'/> A hierarquia de conteúdo da página é definida por sua lógica e não pelo tamanaho do texto. [16]
+* <CheckableBox id='dev-title-1'/> A hierarquia de conteúdo da página é definida por sua lógica e não pelo tamanho do texto. [16]
 * <CheckableBox id='dev-title-2'/> Use elementos de título `h1` `h2` `h3` para apresentar o conteúdo. [16]
 * <CheckableBox id='dev-title-3'/> Não pular níveis lógicos. [16]
 * <CheckableBox id='dev-title-4'/> Toda página contem um título `h1` descrevendo a página. [16]
