@@ -1,26 +1,46 @@
-# VerificaAAA
+# Plugin de Auditoria de Acessibilidade Web
 
-<div align="center">
-<img src="docs/imagens/logo-verificaaa.png" alt="Logo de prancheta com checklist" style="width: 100px">
-</div>
+Este repositório contém um protótipo funcional de uma extensão para o Google Chrome, desenvolvida com o objetivo de auditar páginas web com base em critérios selecionados das Diretrizes de Acessibilidade para Conteúdo Web (WCAG).
 
+O projeto serve como um template e ponto de partida para o desenvolvimento de ferramentas de diagnóstico de acessibilidade mais robustas.
 
-## Introdução
+# O que é e como criar uma Extensão de Navegador?
 
-Este repositório tem como propósito fornecer um checklist prático de acessibilidade para projetos, principalmente de desenvolvimento de software, que incluem: desenvolvimento web, design, geração de conteúdo e gestão de projetos. 
+Uma extensão de navegador é um pequeno programa de software que personaliza e adiciona funcionalidades ao navegador. Elas são construídas usando tecnologias web padrão: HTML, CSS e JavaScript.
 
-## VerificaAAA
+A arquitetura de uma extensão moderna (especificamente o Manifest V3 do Chrome) é baseada em alguns componentes principais:
 
-O VerificaAAA é nome do projeto criado a partir do curso de Interação Humano Computador, ministrado pela docente Rejane Maria da Costa Figueiredo, na Universidade de Brasília (UnB). 
+1. `manifest.json` : informa ao navegador o nome da extensão, a versão, as permissões necessárias e quais arquivos são responsáveis por sua funcionalidade.
+2. Interface do Usuário: é a interface com a qual o usuário interage, geralmente uma pequena janela (`popup.html`) que aparece ao clicar no ícone da extensão na barra de ferramentas.
+3. Scripts: O JavaScript (`popup.js`) que dá vida à extensão, ele não pode acessar diretamente o DOM da página, por motivos de segurança. Em vez disso, ele utiliza a API chrome.scripting para injetar um script ou função no contexto da página ativa.
 
-## Contribuidores
+# Funcionamento Específico deste Protótipo/Template
 
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/gabrielaugusto23"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/103151217?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Augusto</b></sub></a><br />
-    <td align="center"><a href="https://github.com/mariadenis"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127852640?v=4" width="100px;" alt=""/><br /><sub><b>Maria Eduarda</b></sub></a><br />   
-    <td align="center"><a href="https://github.com/Nenalia02"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/151588927?v=4" width="100px;" alt=""/><br /><sub><b>Lorena Ribeiro</b></sub></a><br />   
-    <td align="center"><a href="https://github.com/bielg7"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/150948362?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Pereira</b></sub></a><br />
-    <td align="center"><a href="https://github.com/SDC-Diih"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/48413982?v=4" width="100px;" alt=""/><br /><sub><b>Diogo Oliveira</b></sub></a><br />
-  </tr>
-</table>
+## 1. Estrutura de Arquivos do Projeto
+
+```
+.
+├── manifest.json     # Configuração principal da extensão (MV3)
+├── popup.html        # A interface do usuário (UI) da extensão
+├── popup.js          # Lógica da UI e a função de auditoria injetável
+└── icon.png          # Ícone exibido na barra de ferramentas do Chrome
+```
+
+## 2. Como rodar e testar?
+
+1. Clone ou faça o download deste repositório e descompacte-o em uma pasta local.
+2. Abra o Google Chrome e navegue até a página de extensões: chrome://extensions/
+3. No canto superior direito da página, ative o "Modo de desenvolvedor".
+4. Clique em "Carregar sem compactação" (Load unpacked).
+5. Na janela que se abre, selecione a pasta completa com os arquivos do projeto.
+6. Acesse qualquer website e clique no ícone da extensão para testar.
+7. Resultado esperado:
+
+![Imagem testando o plugin de acessibilidade. Nesta imagem temos um website institucional da Universidade de Brasilia e no canto superior direito a indicação de que foram encontradas 3 inconsistências em imagens sem o ALT](plugin/img_teste.png)
+
+# Recursos
+
+- Google Chrome (Manifest V3): [Visão Geral das Extensões do Chrome](https://developer.chrome.com/docs/extensions/develop/migrate)
+- Mozilla (Firefox): [Anatomia de uma WebExtension (MDN)](https://developer.mozilla.org/pt-BR/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension)
+- Microsoft Edge: [Documentação de Extensões do Edge](https://learn.microsoft.com/pt-br/microsoft-edge/extensions/)
+- WCAG 2.1 (Referência): [Diretrizes de Acessibilidade para Conteúdo Web (W3C)](https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1)
