@@ -36,7 +36,7 @@ A arquitetura de uma extensão moderna (especificamente o Manifest V3 do Chrome)
 6. Acesse qualquer website e clique no ícone da extensão para testar.
 7. Resultado esperado:
 
-![Imagem testando o plugin de acessibilidade. Nesta imagem temos um website institucional da Universidade de Brasilia e no canto superior direito a indicação de que foram encontradas 3 inconsistências em imagens sem o ALT](img_teste.png)
+![Imagem testando o plugin de acessibilidade. Nesta imagem temos um website institucional da Universidade de Brasilia e no canto superior direito a indicação de que foram encontradas 3 inconsistências em imagens sem o ALT](/plugin/img_teste.png)
 
 # Recursos
 
