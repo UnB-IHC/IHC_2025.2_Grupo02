@@ -97,7 +97,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'overview',
+            docId: 'analise-pratica/overview',
             position: 'left',
             label: 'Progresso Geral',
           },
