@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'GG2 Pocket',
-  tagline: 'Interação Humano Computador',
+  tagline: 'GG2 Pocket é um projeto da disciplina de Interação Humano-Computador (UnB) que reúne um checklist de acessibilidade digital e um GUI com conceitos de UX, UI e Blueprint um resumo prático e atualizado da área de IHC.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -87,6 +87,7 @@ const config = {
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-grupo-dark.svg', // Dark mode logo
         },
         items: [
           {
@@ -94,12 +95,6 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentação',
-          },
-          {
-            type: 'doc',
-            docId: 'analise-pratica/overview',
-            position: 'left',
-            label: 'Progresso Geral',
           },
           {
             href: 'https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git',
@@ -111,7 +106,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Verifica AAA. Feito com Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} GG2 Pocket. Feito com Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
