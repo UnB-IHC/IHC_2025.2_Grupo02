@@ -28,3 +28,26 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.footer {
+  background: transparent !important;
+  border-top: none;
+  margin-top: 2.8%;
+}
+
+[data-theme='light'] .footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.11); /* quase invisível */
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* branco com opacidade */
+}
+
+
+[data-theme='light'] .footer {
+  color: black;
+}
+
+[data-theme='dark'] .footer {
+  color: white;
+}
