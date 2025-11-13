@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'VerificaAAA',
+  title: 'GG2 Pocket',
   tagline: 'Interação Humano Computador',
   favicon: 'img/favicon.ico',
 
@@ -83,7 +83,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'VerificaAAA',
+        title: 'GG2 Pocket',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
