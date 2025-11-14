@@ -29,6 +29,9 @@ sidebar_position: 6
 * **Accessibility Insights (Microsoft)** - Ferramenta que verifica a conformidade com os padrões de acessibilidade WCAG 2.1, com testes manuais e automáticos.
 * **Siteimprove Accessibility Checker** - Extensão para navegadores que fornece recomendações claras para resolver problemas de acessibilidade.
 
+## Heurísticas de Nielsen  
+* **Avaliação Heurística de Usabilidade** - Conjunto de 10 princípios utilizados para identificar problemas de usabilidade e acessibilidade em interfaces, ajudando a avaliar clareza, consistência, prevenção de erros e facilidade de uso.
+
 ## Complementares
 
 * **Inclusive Components** - Biblioteca com exemplos acessíveis de componentes HTML e JavaScript.
