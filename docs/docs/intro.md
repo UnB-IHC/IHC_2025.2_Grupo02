@@ -15,7 +15,61 @@ Mais do que atualizar o legado do [VerificaAAA](https://github.com/vitorfleonard
 
 ## Contribuidores
 
-<!-- Tabela com os nomes e fotos (ordem alfabética) -->
-| <a href="https://github.com/SDC-Diih"><img src="https://avatars.githubusercontent.com/u/48413982?v=4" width="150"></img></a> | <a href="https://github.com/gabrielaugusto23"><img src="https://avatars.githubusercontent.com/u/103151217?v=4" width="150"></img></a> | <a href="https://github.com/bielg7"><img src="https://avatars.githubusercontent.com/u/150948362?v=4" width="150"></img></a> | <a href="https://github.com/Nenalia02"><img src="https://avatars.githubusercontent.com/u/151588927?v=4" width="150"></img></a> | <a href="https://github.com/mariadenis"><img src="https://avatars.githubusercontent.com/u/127852640?v=4" width="150"></img></a> |
-|----------|----------|----------|----------|----------|
-| [Diogo Oliveira](https://github.com/SDC-Diih) | [Gabriel Augusto](https://github.com/gabrielaugusto23) | [Gabriel Pereira](https://github.com/bielg7) | [Lorena Ribeiro](https://github.com/Nenalia02) | [Maria Eduarda](https://github.com/mariadenis) |
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
+
+  <a href="https://github.com/SDC-Diih" style={{ textDecoration: "none", color: "inherit" }}>
+    <div className="team-card">
+      <img 
+        src="https://avatars.githubusercontent.com/u/48413982?v=4"
+        alt="Diogo Oliveira"
+        className="team-avatar"
+      />
+      <h3>Diogo Oliveira</h3>
+    </div>
+  </a>
+
+  <a href="https://github.com/gabrielaugusto23" style={{ textDecoration: "none", color: "inherit" }}>
+    <div className="team-card">
+      <img 
+        src="https://avatars.githubusercontent.com/u/103151217?v=4"
+        alt="Gabriel Augusto"
+        className="team-avatar"
+      />
+      <h3>Gabriel Augusto</h3>
+    </div>
+  </a>
+
+  <a href="https://github.com/bielg7" style={{ textDecoration: "none", color: "inherit" }}>
+    <div className="team-card">
+      <img 
+        src="https://avatars.githubusercontent.com/u/150948362?v=4"
+        alt="Gabriel Pereira"
+        className="team-avatar"
+      />
+      <h3>Gabriel Pereira</h3>
+    </div>
+  </a>
+
+  <a href="https://github.com/Nenalia02" style={{ textDecoration: "none", color: "inherit" }}>
+    <div className="team-card">
+      <img 
+        src="https://avatars.githubusercontent.com/u/151588927?v=4"
+        alt="Lorena Ribeiro"
+        className="team-avatar"
+      />
+      <h3>Lorena Ribeiro</h3>
+    </div>
+  </a>
+
+  <a href="https://github.com/mariadenis" style={{ textDecoration: "none", color: "inherit" }}>
+    <div className="team-card">
+      <img 
+        src="https://avatars.githubusercontent.com/u/127852640?v=4"
+        alt="Maria Eduarda"
+        className="team-avatar"
+      />
+      <h3>Maria Eduarda</h3>
+    </div>
+  </a>
+
+</div>
