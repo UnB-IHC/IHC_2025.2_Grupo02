@@ -1,17 +1,14 @@
-# VerificaAAA
+# GG2 Pocket
 
-<div align="center">
-<img src="docs/imagens/logo-verificaaa.png" alt="Logo de prancheta com checklist" style="width: 100px">
-</div>
+### Introdução
 
+O GG2 Pocket nasce no contexto da disciplina de Interação Humano-Computador (IHC), ministrada pela professora Rejane Maria da Costa Figueiredo na Universidade de Brasília (UnB).
 
-## Introdução
+Este projeto dá continuidade às iniciativas anteriores da disciplina, em especial ao VerificaAAA, que serviu como inspiração e ponto de partida. A partir dessa base, realizamos uma revisão crítica e ampliamos os critérios de avaliação, incorporando referências atualizadas como as Diretrizes WCAG 2.2, a norma brasileira ABNT NBR 17225 e o Guia de Boas Práticas para Acessibilidade Digital.
 
-Este repositório tem como propósito fornecer um checklist prático de acessibilidade para projetos, principalmente de desenvolvimento de software, que incluem: desenvolvimento web, design, geração de conteúdo e gestão de projetos. 
+O objetivo do GG2 Pocket é oferecer um checklist prático e acessível que auxilie equipes de desenvolvimento web, design, produção de conteúdo e gestão de projetos na implementação de soluções digitais inclusivas.
 
-## VerificaAAA
-
-O VerificaAAA é nome do projeto criado a partir do curso de Interação Humano Computador, ministrado pela docente Rejane Maria da Costa Figueiredo, na Universidade de Brasília (UnB). 
+Mais do que atualizar o legado do VerificaAAA, buscamos fortalecer a cultura de acessibilidade, promovendo ambientes digitais que reduzam barreiras e ampliem a participação de todos os usuários.
 
 ## Contribuidores
 
