@@ -19,7 +19,7 @@ function HomepageHeader() {
               <Link className={styles.primaryButton} to="/docs/intro">
                 Documentação <ArrowRight size={16} className={styles.iconRight}/>
               </Link>
-              <Link className={styles.secondaryButton} href="https://github.com/mdsreq-fga-unb/REQ-2025.2-T02-RxHospitalar">
+              <Link className={styles.secondaryButton} href="https://github.com/UnB-IHC/IHC_2025.2_Grupo02">
                 GitHub <ExternalLink size={16} className={styles.iconRight}/>
               </Link>
             </div>
