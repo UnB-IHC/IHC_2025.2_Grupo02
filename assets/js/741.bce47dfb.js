@@ -1,0 +1,1 @@
+(globalThis.webpackChunkprojeto_ihc=globalThis.webpackChunkprojeto_ihc||[]).push([[741],{5741:()=>{}}]);
