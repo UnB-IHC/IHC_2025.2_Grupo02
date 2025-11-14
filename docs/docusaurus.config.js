@@ -74,6 +74,19 @@ const config = {
     ],
   ],
 
+  // 🔎 Adicionando o plugin de busca local
+  plugins: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: '/docs',
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -95,6 +108,11 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentação',
+          },
+          {
+            type: 'search',
+            position: 'left',
+            className: 'navbarSearchBar', 
           },
           {
             href: 'https://github.com/UnB-IHC/IHC_2025.2_Grupo02.git',

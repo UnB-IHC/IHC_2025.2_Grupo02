@@ -29,6 +29,20 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Centralizar a barra de pesquisa na navbar */
+.navbarSearchBar {
+  margin: 0 auto; /* isso força o alinhamento central */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; 
+}
+
+/* Opcional: deixar a barra de pesquisa menor */
+.navbarSearchBar input {
+  width: 50vw !important; /* metade da viewport */
+  max-width: 500px;
+}
+
 .footer {
   background: transparent !important;
   border-top: none;
@@ -50,4 +64,11 @@
 
 [data-theme='dark'] .footer {
   color: white;
+}
+
+@media (max-width: 600px) {
+  .navbarSearchBar input {
+    width: 35vw !important; /* mais estreito */
+    max-width: 250px;       /* limite menor */
+  }
 }
