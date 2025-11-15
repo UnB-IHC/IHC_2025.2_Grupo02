@@ -1,53 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Auditor de Acessibilidade</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        width: 350px;
-        padding: 10px;
-      }
-      button {
-        width: 100%;
-        padding: 8px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 14px;
-      }
-      button:hover {
-        background-color: #0056b3;
-      }
-      #results {
-        margin-top: 15px;
-      }
-      #score {
-        font-size: 1.2em;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      ul {
-        padding-left: 20px;
-        max-height: 200px;
-        overflow-y: auto;
-      }
-      li {
-        color: #d9534f; /* Vermelho para erros */
-        margin-bottom: 5px;
-        font-size: 13px;
-      }
-    </style>
-  </head>
-  <body>
-    <h3>Auditoria WCAG</h3>
-    <button id="auditButton">Analisar Página Atual</button>
-    <div id="results">
-      <div id="score"></div>
-      <ul id="errorList"></ul>
-    </div>
-    <script src="popup.js"></script>
-  </body>
+<html>
+<head>
+  <title>Auditor de Acessibilidade</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      width: 350px;
+      padding: 15px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #score {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 15px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+    }
+    #errorList {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 15px;
+      max-height: 200px;
+      overflow-y: auto;
+      border-top: 1px solid #eee;
+    }
+    #errorList li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    #errorList li:first-child {
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Auditor de Acessibilidade</h1>
+  <p>Clique no botao para analisar a pagina atual.</p>
+
+  <!-- O seu script precisa desses elementos para funcionar -->
+  <button id="auditButton">Analisar Pagina</button>
+
+  <div id="score">Pronto para auditar</div>
+
+  <ul id="errorList"></ul>
+
+  <!-- Importante: Carrega o seu script -->
+  <script src="popup.js"></script>
+
+</body>
 </html>
