@@ -5,7 +5,7 @@ sidebar_label: Métodos de Design
 sidebar_position: 6
 ---
 
-# 🧠 Empatia, Codesign e Mapeamento
+# Empatia, Codesign e Mapeamento
 
 Para criar soluções que realmente funcionem, precisamos ir além dos requisitos técnicos. Este guia resume a mentalidade necessária para o Design Centrado no Usuário.
 
@@ -54,7 +54,7 @@ Mapas não são entregáveis finais para "ficar bonito na parede". Eles são **f
 
 ---
 
-### 📚 Referência Bibliográfica
+## Referência Bibliográfica
 > STICKDORN, M.; SCHNEIDER, J. **This is Service Design Thinking**: Basics, Tools, Cases. Wiley, 2011.
 > BROWN, Tim. **Change by Design**: How Design Thinking Transforms Organizations and Inspires Innovation. Harper Business, 2009.
 > IDEO. **The Field Guide to Human-Centered Design**. 2015.
