@@ -7,8 +7,8 @@
 function runAccessibilityAudit() {
   const results = {
     errors: [],
-    totalCriteria: 6,
-    passedCriteria: 6,
+    totalCriteria: 7,
+    passedCriteria: 7,
   };
 
 
@@ -330,6 +330,33 @@ function runAccessibilityAudit() {
 
   if (hoverOnlyErrorFound.size > 0) {
     results.passedCriteria--;
+  }
+
+// ISSUE #23 : Verificar Links Sem Underline (Critério 1.4.1)
+  let underlineErrorFound = false;
+  let countIssue23 = 0;
+  
+  const linksIssue23 = document.querySelectorAll('a'); 
+  
+  linksIssue23.forEach(link => {
+      const style = window.getComputedStyle(link);
+      const isBtn = link.classList.contains('btn') || link.classList.contains('button') || link.getAttribute('role') === 'button';
+      const hasText = link.innerText.trim().length > 0;
+      
+      // Verifica se NÃO tem underline
+      if (style.textDecorationLine.indexOf('underline') === -1 && !isBtn && hasText) {
+          
+          // Destaque visual na página (Borda Vermelha Pontilhada)
+          link.style.borderBottom = "3px dotted red"; 
+          
+          countIssue23++;
+          underlineErrorFound = true;
+      }
+  });
+
+  if (underlineErrorFound) {
+      results.errors.push(`Criterio 1.4.1: Encontrados ${countIssue23} links textuais sem sublinhado.`);
+      results.passedCriteria--;
   }
 
   // Calcular Score
