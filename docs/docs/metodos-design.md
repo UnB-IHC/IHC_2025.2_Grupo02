@@ -2,7 +2,7 @@
 id: metodos-design
 title: Empatia, Codesign e Mapeamento
 sidebar_label: Métodos de Design
-sidebar_position: 6
+sidebar_position: 2
 ---
 
 # Empatia, Codesign e Mapeamento

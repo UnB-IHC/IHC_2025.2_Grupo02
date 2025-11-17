@@ -2,7 +2,7 @@
 id: heuristicas-nielsen
 title: 10 Heurísticas de Nielsen
 sidebar_label: Heurísticas de Nielsen
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # As 10 Heurísticas de Usabilidade de Nielsen

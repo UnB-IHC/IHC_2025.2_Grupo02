@@ -2,7 +2,7 @@
 id: service-blueprint
 title: Guia Rápido de Service Blueprint
 sidebar_label: Service Blueprint
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Service Blueprint (Mapa de Serviço)

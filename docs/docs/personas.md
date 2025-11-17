@@ -2,7 +2,7 @@
 id: personas
 title: Guia de Personas
 sidebar_label: Personas
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Guia de Construção de Personas

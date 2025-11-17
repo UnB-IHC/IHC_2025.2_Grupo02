@@ -2,7 +2,7 @@
 id: checklist-ui-ux
 title: Guia Rápido de UI/UX
 sidebar_label: Boas Práticas UI/UX
-sidebar_position: 2
+sidebar_position: 7
 ---
 
 # Guia de Boas Práticas de Acessibilidade

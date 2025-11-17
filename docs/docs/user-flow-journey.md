@@ -2,7 +2,7 @@
 id: user-flow-journey
 title: "Guia Completo: User Flow vs. User Journey"
 sidebar_label: Fluxo vs. Jornada
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # User Flow vs. User Journey
