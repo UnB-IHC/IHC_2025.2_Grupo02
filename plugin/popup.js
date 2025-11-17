@@ -7,8 +7,8 @@
 function runAccessibilityAudit() {
   const results = {
     errors: [],
-    totalCriteria: 6,
-    passedCriteria: 6,
+    totalCriteria: 8,
+    passedCriteria: 8,
   };
 
 
@@ -332,6 +332,93 @@ function runAccessibilityAudit() {
     results.passedCriteria--;
   }
 
+// ISSUE #23 : Verificar Links Sem Underline (Critério 1.4.1)
+  let underlineErrorFound = false;
+  let countIssue23 = 0;
+  
+  const linksIssue23 = document.querySelectorAll('a'); 
+  
+  linksIssue23.forEach(link => {
+      const style = window.getComputedStyle(link);
+      const isBtn = link.classList.contains('btn') || link.classList.contains('button') || link.getAttribute('role') === 'button';
+      const hasText = link.innerText.trim().length > 0;
+      
+      // Verifica se NÃO tem underline
+      if (style.textDecorationLine.indexOf('underline') === -1 && !isBtn && hasText) {
+          
+          // Destaque visual na página (Borda Vermelha Pontilhada)
+          link.style.borderBottom = "3px dotted red"; 
+          
+          countIssue23++;
+          underlineErrorFound = true;
+      }
+  });
+
+  if (underlineErrorFound) {
+      results.errors.push(`Criterio 1.4.1: Encontrados ${countIssue23} links textuais sem sublinhado.`);
+      results.passedCriteria--;
+  }
+
+
+
+  // [ISSUE #22] Verificar Botões com Nome Acessível
+
+  let buttonNameError = false;
+  let countIssue22 = 0;
+
+  console.group("Detalhes da Issue #22 (Botoes)");
+
+  const buttons = document.querySelectorAll('button, input[type="submit"], input[type="button"], input[type="image"], [role="button"]');
+
+  buttons.forEach(btn => {
+ 
+      const isVisible = !!(btn.offsetWidth || btn.offsetHeight || btn.getClientRects().length);
+      const style = window.getComputedStyle(btn);
+      const isHidden = style.display === 'none' || style.visibility === 'hidden';
+
+      if (!isVisible || isHidden) {
+          return; 
+      }
+    
+
+      const hasText = btn.innerText && btn.innerText.trim().length > 0;
+      const hasAriaLabel = btn.getAttribute('aria-label') && btn.getAttribute('aria-label').trim().length > 0;
+      const hasAriaLabelledBy = btn.hasAttribute('aria-labelledby');
+      const hasTitle = btn.getAttribute('title') && btn.getAttribute('title').trim().length > 0;
+      
+      const isInput = btn.tagName === 'INPUT';
+      const hasValue = isInput && btn.value && btn.value.trim().length > 0;
+      const hasAlt = isInput && btn.type === 'image' && btn.alt && btn.alt.trim().length > 0;
+
+      let hasImgWithAlt = false;
+      const childImg = btn.querySelector('img');
+      if (childImg && childImg.alt && childImg.alt.trim().length > 0) {
+          hasImgWithAlt = true;
+      }
+
+     
+      if (!hasText && !hasAriaLabel && !hasAriaLabelledBy && !hasTitle && !hasValue && !hasAlt && !hasImgWithAlt) {
+          
+          //Outline fica POR CIMA de tudo e não quebra layout.
+          btn.style.outline = "5px solid #FF00FF"; // Roxo neon 
+          btn.style.outlineOffset = "2px";
+          
+         
+          console.log(` Botão ERRO (ID: ${btn.id} | Class: ${btn.className})`, btn);
+
+          countIssue22++;
+          buttonNameError = true;
+      }
+  });
+  
+  console.groupEnd();
+
+  if (buttonNameError) {
+      results.errors.push(`Criterio 4.1.2 (Issue #22): Encontrados ${countIssue22} botoes VISiVEIS sem nome acessivel.`);
+      results.passedCriteria--;
+  }
+
+  
   // Calcular Score
   results.score = (results.passedCriteria / results.totalCriteria) * 100;
 
