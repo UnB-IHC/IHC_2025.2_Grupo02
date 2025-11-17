@@ -88,37 +88,6 @@ function runAccessibilityAudit() {
 
   // =========================================== CRITERIOS NOVOS CÓDIFICADOS GG2 ====================================
 
-  // ISSUE #21 : Detectar Links Sem Atributo href
-  // Criterio 2.4.4
-  const allLinks = document.querySelectorAll('a');
-  let linkHrefErrorFound = false;
-
-  allLinks.forEach((link) => {
-    const text = link.innerText.substring(0, 30);
-    const linkText = `(texto: "${text || '[vazio]'}...")`;
-
-    if (!link.hasAttribute('href')) {
-      // Erro 1: 'href' ausente
-      results.errors.push(
-        `Criterio 2.4.4 (Links): O link ${linkText} e umaatag <a> mas Nao possui um atributo 'href'.`
-      );
-      linkHrefErrorFound = true;
-    } else {
-      // Erro 2: 'href' existe, porem Naa e navagável
-      const href = link.getAttribute('href').trim();
-      if (href === '' || href === '#' || href.startsWith('javascript:')) {
-        results.errors.push(
-          `Criterio 2.4.4 (Links): O link ${linkText} possui um atributo 'href' Nao-navegável (valor: "${href}").`
-        );
-        linkHrefErrorFound = true;
-      }
-    }
-  });
-  if (linkHrefErrorFound) {
-    results.passedCriteria--;
-  }
-
-
   // ISSUE #19 : Verificar Presença de Estrutura Semantica Básica (Expandido)
   // Criterio 1.3.1
   let semanticErrorFound = false;
@@ -186,6 +155,182 @@ function runAccessibilityAudit() {
     results.passedCriteria--;
   }
 
+  // ISSUE #21 : Detectar Links Sem Atributo href
+  // Criterio 2.4.4
+  const allLinks = document.querySelectorAll('a');
+  let linkHrefErrorFound = false;
+
+  allLinks.forEach((link) => {
+    const text = link.innerText.substring(0, 30);
+    const linkText = `(texto: "${text || '[vazio]'}...")`;
+
+    if (!link.hasAttribute('href')) {
+      // Erro 1: 'href' ausente
+      results.errors.push(
+        `Criterio 2.4.4 (Links): O link ${linkText} e umaatag <a> mas Nao possui um atributo 'href'.`
+      );
+      linkHrefErrorFound = true;
+    } else {
+      // Erro 2: 'href' existe, porem Naa e navagável
+      const href = link.getAttribute('href').trim();
+      if (href === '' || href === '#' || href.startsWith('javascript:')) {
+        results.errors.push(
+          `Criterio 2.4.4 (Links): O link ${linkText} possui um atributo 'href' Nao-navegável (valor: "${href}").`
+        );
+        linkHrefErrorFound = true;
+      }
+    }
+  });
+  if (linkHrefErrorFound) {
+    results.passedCriteria--;
+  }
+
+  // ISSUE #24 : Elementos Interativos Sem Foco Visível
+  // Critério 2.4.7 (Foco Visível)
+  const interactiveSelectors = `
+    a[href],
+    button,
+    input,
+    textarea,
+    select,
+    [role="button"],
+    [role="link"],
+    [tabindex]:not([tabindex="-1"])
+  `;
+
+  const interactiveElements = document.querySelectorAll(interactiveSelectors);
+  let focusVisibleErrorFound = false;
+
+  function hasFocusStyle(el) {
+    const elementTag = el.tagName.toLowerCase();
+    const classes = [...el.classList];
+    const ids = el.id ? [`#${el.id}`] : [];
+
+    // Gera seletores possíveis do elemento
+    const possibleSelectors = [
+      elementTag,
+      ...classes.map(c => `.${c}`),
+      ...ids,
+    ];
+
+    // Verifica se existe alguma regra CSS com :focus que afete esse elemento
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try {
+        rules = sheet.cssRules;
+      } catch {
+        continue; // Ignora CORS
+      }
+      if (!rules) continue;
+
+      for (const rule of rules) {
+        if (rule.selectorText && rule.selectorText.includes(':focus')) {
+          for (const baseSel of possibleSelectors) {
+            const fullSelector = `${baseSel}:focus`;
+            if (rule.selectorText.includes(fullSelector)) {
+              return true; // tem estilo de foco definido
+            }
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  interactiveElements.forEach((el) => {
+    const style = window.getComputedStyle(el);
+
+    const outlineNone =
+      style.outlineStyle === 'none' ||
+      style.outlineWidth === '0px';
+
+    const noBoxShadow = style.boxShadow === 'none' || !style.boxShadow;
+
+    const hasCustomFocus = hasFocusStyle(el);
+
+    if (outlineNone && noBoxShadow && !hasCustomFocus) {
+      results.errors.push(
+        `Criterio 2.4.7 (Foco Visível): O elemento <${el.tagName.toLowerCase()}> não apresenta um estilo de foco perceptível.`
+      );
+      focusVisibleErrorFound = true;
+    }
+  });
+
+  if (focusVisibleErrorFound) {
+    results.passedCriteria--;
+  }
+
+    // ISSUE #25 : Interações Somente com Hover
+  // Critério 2.4.7 / 2.1.1
+  const hoverOnlyErrorFound = new Set();
+
+  const hoverSelectors = [];   // [{ base: ".button", full: ".button:hover" }]
+  const focusSelectors = new Set();  // ".button:focus", ".button:focus-visible"
+
+  // 1. Mapear regras CSS com :hover e :focus/:focus-visible
+  for (const sheet of document.styleSheets) {
+    let rules;
+    try {
+      rules = sheet.cssRules;
+    } catch {
+      continue; // ignora CORS
+    }
+    if (!rules) continue;
+
+    for (const rule of rules) {
+      if (!rule.selectorText) continue;
+
+      const selectors = rule.selectorText.split(',');
+
+      selectors.forEach(sel => {
+        const s = sel.trim();
+
+        if (s.includes(':hover')) {
+          const base = s.replace(':hover', '').trim();
+          hoverSelectors.push({ base, full: s });
+        }
+
+        if (s.includes(':focus') || s.includes(':focus-visible')) {
+          const base = s
+            .replace(':focus-visible', '')
+            .replace(':focus', '')
+            .trim();
+          focusSelectors.add(base);
+        }
+      });
+    }
+  }
+
+  // 2. Verificar elementos que possuem :hover mas NÃO possuem :focus equivalente
+  hoverSelectors.forEach(({ base, full }) => {
+    if (!focusSelectors.has(base)) {
+
+      let affectedElements = [];
+      try {
+        affectedElements = document.querySelectorAll(base);
+      } catch {
+        // seletores muito complexos podem falhar
+        return;
+      }
+
+      affectedElements.forEach(el => {
+        const preview = el.outerHTML.substring(0, 80).replace(/\n/g, '');
+
+        results.errors.push(
+          `Criterio 2.4.7 / 2.1.1 (Interações Somente com Hover): 
+            O seletor "${full}" aplica estilo visual apenas no estado :hover, 
+            mas NÃO há equivalente em :focus ou :focus-visible.  
+            Elemento afetado: ${preview}...`
+        );
+
+        hoverOnlyErrorFound.add(el);
+      });
+    }
+  });
+
+  if (hoverOnlyErrorFound.size > 0) {
+    results.passedCriteria--;
+  }
 
   // Calcular Score
   results.score = (results.passedCriteria / results.totalCriteria) * 100;
