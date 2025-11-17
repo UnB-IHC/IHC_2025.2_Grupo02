@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Guia de Boas Práticas de Acessibilidade
 
-Este resumo condensa os pontos principais do **Guia de Boas Práticas para Acessibilidade Digital (2023)** para aplicarmos no projeto **VerificaAAA**.
+Este resumo condensa os pontos principais do **Guia de Boas Práticas para Acessibilidade Digital (2023)** para aplicarmos no projeto **Pocket GG2**.
 
 :::info Objetivo
 O foco não é decorar regras, mas consultar este guia sempre que formos criar uma nova tela ou componente.
