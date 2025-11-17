@@ -186,6 +186,81 @@ function runAccessibilityAudit() {
     results.passedCriteria--;
   }
 
+  // ISSUE #24 : Elementos Interativos Sem Foco Visível
+  // Critério 2.4.7 (Foco Visível)
+  const interactiveSelectors = `
+    a[href],
+    button,
+    input,
+    textarea,
+    select,
+    [role="button"],
+    [role="link"],
+    [tabindex]:not([tabindex="-1"])
+  `;
+
+  const interactiveElements = document.querySelectorAll(interactiveSelectors);
+  let focusVisibleErrorFound = false;
+
+  function hasFocusStyle(el) {
+    const elementTag = el.tagName.toLowerCase();
+    const classes = [...el.classList];
+    const ids = el.id ? [`#${el.id}`] : [];
+
+    // Gera seletores possíveis do elemento
+    const possibleSelectors = [
+      elementTag,
+      ...classes.map(c => `.${c}`),
+      ...ids,
+    ];
+
+    // Verifica se existe alguma regra CSS com :focus que afete esse elemento
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try {
+        rules = sheet.cssRules;
+      } catch {
+        continue; // Ignora CORS
+      }
+      if (!rules) continue;
+
+      for (const rule of rules) {
+        if (rule.selectorText && rule.selectorText.includes(':focus')) {
+          for (const baseSel of possibleSelectors) {
+            const fullSelector = `${baseSel}:focus`;
+            if (rule.selectorText.includes(fullSelector)) {
+              return true; // tem estilo de foco definido
+            }
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  interactiveElements.forEach((el) => {
+    const style = window.getComputedStyle(el);
+
+    const outlineNone =
+      style.outlineStyle === 'none' ||
+      style.outlineWidth === '0px';
+
+    const noBoxShadow = style.boxShadow === 'none' || !style.boxShadow;
+
+    const hasCustomFocus = hasFocusStyle(el);
+
+    if (outlineNone && noBoxShadow && !hasCustomFocus) {
+      results.errors.push(
+        `Criterio 2.4.7 (Foco Visível): O elemento <${el.tagName.toLowerCase()}> não apresenta um estilo de foco perceptível.`
+      );
+      focusVisibleErrorFound = true;
+    }
+  });
+
+  if (focusVisibleErrorFound) {
+    results.passedCriteria--;
+  }
+
 
   // Calcular Score
   results.score = (results.passedCriteria / results.totalCriteria) * 100;
