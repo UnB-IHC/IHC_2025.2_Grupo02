@@ -88,37 +88,6 @@ function runAccessibilityAudit() {
 
   // =========================================== CRITERIOS NOVOS CÓDIFICADOS GG2 ====================================
 
-  // ISSUE #21 : Detectar Links Sem Atributo href
-  // Criterio 2.4.4
-  const allLinks = document.querySelectorAll('a');
-  let linkHrefErrorFound = false;
-
-  allLinks.forEach((link) => {
-    const text = link.innerText.substring(0, 30);
-    const linkText = `(texto: "${text || '[vazio]'}...")`;
-
-    if (!link.hasAttribute('href')) {
-      // Erro 1: 'href' ausente
-      results.errors.push(
-        `Criterio 2.4.4 (Links): O link ${linkText} e umaatag <a> mas Nao possui um atributo 'href'.`
-      );
-      linkHrefErrorFound = true;
-    } else {
-      // Erro 2: 'href' existe, porem Naa e navagável
-      const href = link.getAttribute('href').trim();
-      if (href === '' || href === '#' || href.startsWith('javascript:')) {
-        results.errors.push(
-          `Criterio 2.4.4 (Links): O link ${linkText} possui um atributo 'href' Nao-navegável (valor: "${href}").`
-        );
-        linkHrefErrorFound = true;
-      }
-    }
-  });
-  if (linkHrefErrorFound) {
-    results.passedCriteria--;
-  }
-
-
   // ISSUE #19 : Verificar Presença de Estrutura Semantica Básica (Expandido)
   // Criterio 1.3.1
   let semanticErrorFound = false;
@@ -183,6 +152,36 @@ function runAccessibilityAudit() {
     }
   }
   if (headingErrorFound) {
+    results.passedCriteria--;
+  }
+
+  // ISSUE #21 : Detectar Links Sem Atributo href
+  // Criterio 2.4.4
+  const allLinks = document.querySelectorAll('a');
+  let linkHrefErrorFound = false;
+
+  allLinks.forEach((link) => {
+    const text = link.innerText.substring(0, 30);
+    const linkText = `(texto: "${text || '[vazio]'}...")`;
+
+    if (!link.hasAttribute('href')) {
+      // Erro 1: 'href' ausente
+      results.errors.push(
+        `Criterio 2.4.4 (Links): O link ${linkText} e umaatag <a> mas Nao possui um atributo 'href'.`
+      );
+      linkHrefErrorFound = true;
+    } else {
+      // Erro 2: 'href' existe, porem Naa e navagável
+      const href = link.getAttribute('href').trim();
+      if (href === '' || href === '#' || href.startsWith('javascript:')) {
+        results.errors.push(
+          `Criterio 2.4.4 (Links): O link ${linkText} possui um atributo 'href' Nao-navegável (valor: "${href}").`
+        );
+        linkHrefErrorFound = true;
+      }
+    }
+  });
+  if (linkHrefErrorFound) {
     results.passedCriteria--;
   }
 
