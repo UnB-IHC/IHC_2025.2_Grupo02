@@ -7,8 +7,8 @@
 function runAccessibilityAudit() {
   const results = {
     errors: [],
-    totalCriteria: 7,
-    passedCriteria: 7,
+    totalCriteria: 8,
+    passedCriteria: 8,
   };
 
 
@@ -359,6 +359,66 @@ function runAccessibilityAudit() {
       results.passedCriteria--;
   }
 
+
+
+  // [ISSUE #22] Verificar Botões com Nome Acessível
+
+  let buttonNameError = false;
+  let countIssue22 = 0;
+
+  console.group("Detalhes da Issue #22 (Botoes)");
+
+  const buttons = document.querySelectorAll('button, input[type="submit"], input[type="button"], input[type="image"], [role="button"]');
+
+  buttons.forEach(btn => {
+ 
+      const isVisible = !!(btn.offsetWidth || btn.offsetHeight || btn.getClientRects().length);
+      const style = window.getComputedStyle(btn);
+      const isHidden = style.display === 'none' || style.visibility === 'hidden';
+
+      if (!isVisible || isHidden) {
+          return; 
+      }
+    
+
+      const hasText = btn.innerText && btn.innerText.trim().length > 0;
+      const hasAriaLabel = btn.getAttribute('aria-label') && btn.getAttribute('aria-label').trim().length > 0;
+      const hasAriaLabelledBy = btn.hasAttribute('aria-labelledby');
+      const hasTitle = btn.getAttribute('title') && btn.getAttribute('title').trim().length > 0;
+      
+      const isInput = btn.tagName === 'INPUT';
+      const hasValue = isInput && btn.value && btn.value.trim().length > 0;
+      const hasAlt = isInput && btn.type === 'image' && btn.alt && btn.alt.trim().length > 0;
+
+      let hasImgWithAlt = false;
+      const childImg = btn.querySelector('img');
+      if (childImg && childImg.alt && childImg.alt.trim().length > 0) {
+          hasImgWithAlt = true;
+      }
+
+     
+      if (!hasText && !hasAriaLabel && !hasAriaLabelledBy && !hasTitle && !hasValue && !hasAlt && !hasImgWithAlt) {
+          
+          //Outline fica POR CIMA de tudo e não quebra layout.
+          btn.style.outline = "5px solid #FF00FF"; // Roxo neon 
+          btn.style.outlineOffset = "2px";
+          
+         
+          console.log(` Botão ERRO (ID: ${btn.id} | Class: ${btn.className})`, btn);
+
+          countIssue22++;
+          buttonNameError = true;
+      }
+  });
+  
+  console.groupEnd();
+
+  if (buttonNameError) {
+      results.errors.push(`Criterio 4.1.2 (Issue #22): Encontrados ${countIssue22} botoes VISiVEIS sem nome acessivel.`);
+      results.passedCriteria--;
+  }
+
+  
   // Calcular Score
   results.score = (results.passedCriteria / results.totalCriteria) * 100;
 
