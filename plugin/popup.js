@@ -260,6 +260,77 @@ function runAccessibilityAudit() {
     results.passedCriteria--;
   }
 
+    // ISSUE #25 : Interações Somente com Hover
+  // Critério 2.4.7 / 2.1.1
+  const hoverOnlyErrorFound = new Set();
+
+  const hoverSelectors = [];   // [{ base: ".button", full: ".button:hover" }]
+  const focusSelectors = new Set();  // ".button:focus", ".button:focus-visible"
+
+  // 1. Mapear regras CSS com :hover e :focus/:focus-visible
+  for (const sheet of document.styleSheets) {
+    let rules;
+    try {
+      rules = sheet.cssRules;
+    } catch {
+      continue; // ignora CORS
+    }
+    if (!rules) continue;
+
+    for (const rule of rules) {
+      if (!rule.selectorText) continue;
+
+      const selectors = rule.selectorText.split(',');
+
+      selectors.forEach(sel => {
+        const s = sel.trim();
+
+        if (s.includes(':hover')) {
+          const base = s.replace(':hover', '').trim();
+          hoverSelectors.push({ base, full: s });
+        }
+
+        if (s.includes(':focus') || s.includes(':focus-visible')) {
+          const base = s
+            .replace(':focus-visible', '')
+            .replace(':focus', '')
+            .trim();
+          focusSelectors.add(base);
+        }
+      });
+    }
+  }
+
+  // 2. Verificar elementos que possuem :hover mas NÃO possuem :focus equivalente
+  hoverSelectors.forEach(({ base, full }) => {
+    if (!focusSelectors.has(base)) {
+
+      let affectedElements = [];
+      try {
+        affectedElements = document.querySelectorAll(base);
+      } catch {
+        // seletores muito complexos podem falhar
+        return;
+      }
+
+      affectedElements.forEach(el => {
+        const preview = el.outerHTML.substring(0, 80).replace(/\n/g, '');
+
+        results.errors.push(
+          `Criterio 2.4.7 / 2.1.1 (Interações Somente com Hover): 
+            O seletor "${full}" aplica estilo visual apenas no estado :hover, 
+            mas NÃO há equivalente em :focus ou :focus-visible.  
+            Elemento afetado: ${preview}...`
+        );
+
+        hoverOnlyErrorFound.add(el);
+      });
+    }
+  });
+
+  if (hoverOnlyErrorFound.size > 0) {
+    results.passedCriteria--;
+  }
 
   // Calcular Score
   results.score = (results.passedCriteria / results.totalCriteria) * 100;
