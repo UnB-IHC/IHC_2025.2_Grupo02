@@ -1,73 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auditor de Acessibilidade</title>
   <style>
+    /* ================= VARIÁVEIS E CORES ================= */
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      
+      /* Cores de Feedback */
+      --success-color: #16a34a;
+      --success-bg: #f0fdf4;
+      --error-color: #dc2626;
+      --error-text: #991b1b;
+      
+      /* Sombras */
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-red: 0 4px 15px rgba(220, 38, 38, 0.15); /* Sombra vermelha difusa */
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      width: 350px;
-      padding: 15px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      width: 380px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* ================= CABEÇALHO ================= */
+    header {
+      background-color: var(--card-bg);
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-access { width: 24px; height: 24px; fill: var(--primary-color); }
+
+    /* ================= CONTEÚDO ================= */
+    main { padding: 20px; }
+
+    .intro-text {
       font-size: 14px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    button:hover:not(:disabled) {
-      background-color: #0056b3;
-    }
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-    #score {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-top: 15px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
       text-align: center;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #f4f4f4;
     }
+
+    /* ================= BOTÃO ================= */
+    button#auditButton {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background-color: var(--primary-color);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button#auditButton:hover { background-color: var(--primary-hover); }
+    button#auditButton:active { transform: scale(0.98); }
+    button#auditButton:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+
+    /* ================= SCORE (TEXTO) ================= */
+    #score {
+      margin-top: 20px;
+      background-color: var(--card-bg);
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    /* ================= LISTA DE ERROS ================= */
     #errorList {
       list-style-type: none;
-      padding-left: 0;
-      margin-top: 15px;
-      max-height: 200px;
+      padding: 0;
+      margin-top: 20px;
+      max-height: 400px;
       overflow-y: auto;
-      border-top: 1px solid #eee;
     }
+
     #errorList li {
-      padding: 8px;
-      border-bottom: 1px solid #eee;
+      background-color: var(--card-bg);
+      margin-bottom: 12px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      border: 1px solid transparent; /* Prepara para borda */
+      transition: transform 0.2s;
     }
-    #errorList li:first-child {
-      border-top: 1px solid #eee;
+
+    /* --- ESTILO: ERRO (Sombra Vermelha) --- */
+    /* Adicionado via JS */
+    #errorList li.error-item {
+      box-shadow: var(--shadow-red); /* Sombra vermelha suave */
+      border-left: 5px solid var(--error-color); /* Barra lateral vermelha */
+      color: var(--text-main);
+    }
+    
+    #errorList li.error-item:hover {
+      transform: translateX(2px); /* Efeito sutil ao passar o mouse */
+    }
+
+    /* --- ESTILO: SUCESSO (Borda Verde) --- */
+    #errorList li.success-item {
+      background-color: var(--success-bg);
+      border: 2px solid var(--success-color); /* Borda Verde */
+      color: #14532d;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Scrollbar bonita */
+    #errorList::-webkit-scrollbar { width: 6px; }
+    #errorList::-webkit-scrollbar-track { background: transparent; }
+    #errorList::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Auditor de Acessibilidade</h1>
-  <p>Clique no botao para analisar a pagina atual.</p>
+  <header>
+    <h1>
+      <svg class="icon-access" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 6 10 4 10.9 2 12 2M21 9H15V22H13V16H11V22H9V9H3V7H21V9Z" />
+      </svg>
+     Plugin GG2
+    </h1>
+  </header>
 
-  <!-- O seu script precisa desses elementos para funcionar -->
-  <button id="auditButton">Analisar Pagina</button>
+  <main>
+    <p class="intro-text">Verifique a conformidade (WCAG) da página ativa.</p>
 
-  <div id="score">Pronto para auditar</div>
+    <button id="auditButton" type="button">
+      Analisar Página
+    </button>
 
-  <ul id="errorList"></ul>
+    <div id="score" aria-live="polite">Aguardando análise...</div>
 
-  <!-- Importante: Carrega o seu script -->
+    <ul id="errorList" aria-live="polite"></ul>
+  </main>
+
+  <footer>
+    Ferramenta de Auditoria v1.0
+  </footer>
+
   <script src="popup.js"></script>
-
 </body>
 </html>
