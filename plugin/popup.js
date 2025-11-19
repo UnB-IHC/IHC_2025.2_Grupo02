@@ -414,7 +414,7 @@ function runAccessibilityAudit() {
   console.groupEnd();
 
   if (buttonNameError) {
-      results.errors.push(`Criterio 4.1.2 (Issue #22): Encontrados ${countIssue22} botoes VISiVEIS sem nome acessivel.`);
+      results.errors.push(`Criterio 4.1.2: Encontrados ${countIssue22} botoes VISiVEIS sem nome acessivel.`);
       results.passedCriteria--;
   }
 
