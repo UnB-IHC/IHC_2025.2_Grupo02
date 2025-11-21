@@ -414,7 +414,7 @@ function runAccessibilityAudit() {
   console.groupEnd();
 
   if (buttonNameError) {
-      results.errors.push(`Criterio 4.1.2 (Issue #22): Encontrados ${countIssue22} botoes VISiVEIS sem nome acessivel.`);
+      results.errors.push(`Criterio 4.1.2: Encontrados ${countIssue22} botoes VISiVEIS sem nome acessivel.`);
       results.passedCriteria--;
   }
 
@@ -462,17 +462,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Exibe os Erros
+      // ... código anterior ...
+
+      // Exibe os Erros
       if (auditData.errors.length === 0) {
-        errorListEl.innerHTML =
-          '<li>Nenhum erro encontrado nos criterios verificados.</li>';
-        errorListEl.style.color = '#5cb85c';
+        // SUCESSO: Adiciona a classe 'success-item' (Borda Verde)
+        errorListEl.innerHTML = '';
+        const li = document.createElement('li');
+        li.textContent = 'Parabéns! Nenhum erro encontrado nos critérios verificados.';
+        li.className = 'success-item'; // <--- CLASSE IMPORTANTE
+        errorListEl.appendChild(li);
+        
+        scoreEl.style.color = '#16a34a'; // Texto do score verde
       } else {
+        // ERRO: Adiciona a classe 'error-item' (Sombra Vermelha)
         auditData.errors.forEach((error) => {
           const li = document.createElement('li');
           li.textContent = error;
+          li.className = 'error-item'; // <--- CLASSE IMPORTANTE
           errorListEl.appendChild(li);
         });
+
+        scoreEl.style.color = '#dc2626'; // Texto do score vermelho
       }
+      
+      // ... resto do código ...
     } catch (e) {
       console.error(e);
       scoreEl.textContent = 'Erro ao auditar a pagina.';
