@@ -26,19 +26,19 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Layout Fixo do Popup */
+    /* Layout Fixo */
     body {
       font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       width: 400px;
-      height: 600px; /* Altura fixa para permitir scroll interno */
+      height: 600px;
       display: flex;
       flex-direction: column;
-      overflow: hidden; /* Remove scroll do body */
+      overflow: hidden;
     }
 
-    /* ================= HEADER (FIXO) ================= */
+    /* ================= HEADER ================= */
     header {
       background-color: var(--card-bg);
       padding: 16px 20px;
@@ -46,7 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-shrink: 0; /* Não encolhe */
+      flex-shrink: 0;
       z-index: 10;
       box-shadow: var(--shadow-sm);
     }
@@ -63,15 +63,14 @@
 
     /* ================= CONTEÚDO SCROLLÁVEL ================= */
     main {
-      flex: 1; /* Ocupa o espaço restante */
-      overflow-y: auto; /* Scroll apenas aqui */
+      flex: 1;
+      overflow-y: auto;
       padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    /* Scrollbar Bonita */
     main::-webkit-scrollbar { width: 8px; }
     main::-webkit-scrollbar-track { background: transparent; }
     main::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; border: 2px solid var(--bg-color); }
@@ -93,6 +92,7 @@
       gap: 8px;
       transition: all 0.2s;
       box-shadow: var(--shadow-md);
+      flex-shrink: 0;
     }
 
     button#auditButton:hover { background-color: #1d4ed8; transform: translateY(-1px); }
@@ -106,7 +106,7 @@
       border-radius: 12px;
       display: flex;
       align-items: center;
-      justify-content: center; /* Centralizado */
+      justify-content: center;
       gap: 20px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
@@ -122,15 +122,13 @@
       transition: stroke-dashoffset 1s ease-out;
     }
     .donut-text {
-      fill: var(--text-main); font-family: sans-serif; font-weight: 800; font-size: 24px;
+      fill: var(--text-main); font-family: sans-serif; font-weight: 800; font-size: 20px;
       text-anchor: middle; transform: rotate(90deg); transform-origin: center;
     }
 
     .score-info { text-align: left; }
     .score-title { font-size: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; }
     .score-details { font-size: 14px; font-weight: 500; margin-top: 4px; color: var(--text-main); }
-
-    /* Cores Gráfico */
     .score-good { stroke: var(--success-color); }
     .score-bad { stroke: var(--error-color); }
     .score-neutral { stroke: var(--warning-color); }
@@ -140,14 +138,13 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      /* Padding extra para a sombra não cortar */
-      padding: 5px; 
+      padding: 2px;
     }
 
-    /* O Card da Categoria (Details) */
+    /* Card da Categoria */
     details.category-card {
       background: var(--card-bg);
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
       overflow: hidden;
@@ -159,7 +156,7 @@
       padding-bottom: 10px;
     }
 
-    /* Cabeçalho da Categoria (Summary) */
+    /* Cabeçalho (Summary) */
     summary.category-header {
       list-style: none;
       padding: 15px;
@@ -171,53 +168,59 @@
       font-size: 14px;
       transition: background 0.2s;
     }
-    
     summary.category-header::-webkit-details-marker { display: none; }
 
-    /* Cores do Cabeçalho baseadas no status */
-    .cat-success summary { border-left: 5px solid var(--success-color); color: #166534; }
+    /* ESTILOS DE SUCESSO (VERDE) */
+    .cat-success { border-left: 5px solid var(--success-color); }
+    .cat-success summary { color: #15803d; /* Verde escuro */ }
     .cat-success summary:hover { background-color: var(--success-bg); }
-    
-    .cat-fail summary { border-left: 5px solid var(--error-color); color: #991b1b; }
-    .cat-fail summary:hover { background-color: var(--error-bg); }
+    .cat-success .badge { 
+      background: #dcfce7; /* Fundo verde claro */
+      color: #15803d; 
+      border: 1px solid #16a34a; 
+    }
 
-    /* Contador (Badge) */
+    /* ESTILOS DE ERRO (VERMELHO) */
+    .cat-fail { border-left: 5px solid var(--error-color); }
+    .cat-fail summary { color: #b91c1c; /* Vermelho escuro */ }
+    .cat-fail summary:hover { background-color: var(--error-bg); }
+    .cat-fail .badge { 
+      background: #fee2e2; /* Fundo vermelho claro */
+      color: #b91c1c; 
+      border: 1px solid #dc2626; 
+    }
+
+    /* Badge (Contador) */
     .badge {
       font-size: 11px;
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 12px;
       font-weight: 700;
+      white-space: nowrap;
     }
-    .cat-success .badge { background: var(--success-bg); color: var(--success-color); border: 1px solid var(--success-color); }
-    .cat-fail .badge { background: var(--error-bg); color: var(--error-color); border: 1px solid var(--error-color); }
 
-    /* Lista interna de erros */
+    /* Lista interna */
     .error-list {
       list-style: none;
       padding: 0 15px;
-      margin-top: 10px;
-      max-height: 200px; /* Scroll interno se a categoria for muito grande */
-      overflow-y: auto;
+      margin-top: 5px;
     }
-    
-    .error-list::-webkit-scrollbar { width: 4px; }
-    .error-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
 
     .error-item {
       font-size: 13px;
-      padding: 10px;
+      padding: 8px 0;
       border-bottom: 1px solid #f1f5f9;
       color: var(--text-main);
       display: flex;
       gap: 8px;
+      align-items: flex-start;
+      word-break: break-word;
     }
     .error-item:last-child { border-bottom: none; }
     
-    /* Ícone no item de erro */
-    .bullet-error { color: var(--error-color); font-weight: bold; }
-    .bullet-success { color: var(--success-color); font-weight: bold; }
+    .bullet-error { color: var(--error-color); font-weight: bold; min-width: 10px; }
+    .bullet-success { color: var(--success-color); font-weight: bold; min-width: 10px; }
 
-    /* Rodapé */
     footer {
       text-align: center;
       padding: 10px;
@@ -241,19 +244,13 @@
         <line x1="8" y1="16" x2="6" y2="18"/>
         <line x1="16" y1="16" x2="18" y2="18"/>
       </svg>
-      Plugin GG2
+      A11y Auditor
     </h1>
   </header>
 
   <main>
-    <p style="text-align: center; font-size: 13px; color: #64748b; margin:0;">
-      Verifique a acessibilidade e métricas de IHC.
-    </p>
-
     <button id="auditButton" type="button">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       Analisar Página
     </button>
 
@@ -262,7 +259,7 @@
         <svg viewBox="0 0 100 100" class="donut-chart">
           <circle class="donut-bg" cx="50" cy="50" r="45"></circle>
           <circle id="scoreCircle" class="donut-meter" cx="50" cy="50" r="45" pathLength="100"></circle>
-          <text id="scoreText" x="50" y="55" class="donut-text">--</text>
+          <text id="scoreText" x="50" y="55" class="donut-text">--%</text>
         </svg>
       </div>
       <div class="score-info">
@@ -276,7 +273,7 @@
   </main>
 
   <footer>
-    Ferramenta de Auditoria IHC v2.0
+    Ferramenta de Auditoria IHC v3.1
   </footer>
 
   <script src="popup.js"></script>
