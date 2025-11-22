@@ -3,42 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auditor de Acessibilidade</title>
+  <title>Auditor IHC</title>
   <style>
-    /* ================= VARIÁVEIS E CORES ================= */
+    /* ================= VARIÁVEIS ================= */
     :root {
       --primary-color: #2563eb;
-      --primary-hover: #1d4ed8;
       --bg-color: #f8fafc;
       --card-bg: #ffffff;
       --text-main: #1e293b;
       --text-muted: #64748b;
       --border-color: #e2e8f0;
       
-      /* Cores de Feedback */
       --success-color: #16a34a;
       --success-bg: #f0fdf4;
       --error-color: #dc2626;
-      --error-text: #991b1b;
-      
-      /* Sombras */
+      --error-bg: #fef2f2;
+      --warning-color: #f59e0b;
+
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-red: 0 4px 15px rgba(220, 38, 38, 0.15); /* Sombra vermelha difusa */
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Layout Fixo do Popup */
     body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
-      margin: 0;
-      width: 380px;
-      font-size: 15px;
-      line-height: 1.5;
+      width: 400px;
+      height: 600px; /* Altura fixa para permitir scroll interno */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; /* Remove scroll do body */
     }
 
-    /* ================= CABEÇALHO ================= */
+    /* ================= HEADER (FIXO) ================= */
     header {
       background-color: var(--card-bg);
       padding: 16px 20px;
@@ -46,118 +46,186 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-shrink: 0; /* Não encolhe */
+      z-index: 10;
+      box-shadow: var(--shadow-sm);
     }
 
     h1 {
-      margin: 0;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .icon-access { width: 24px; height: 24px; fill: var(--primary-color); }
+    .icon-access { width: 24px; height: 24px; color: var(--primary-color); }
 
-    /* ================= CONTEÚDO ================= */
-    main { padding: 20px; }
-
-    .intro-text {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      text-align: center;
+    /* ================= CONTEÚDO SCROLLÁVEL ================= */
+    main {
+      flex: 1; /* Ocupa o espaço restante */
+      overflow-y: auto; /* Scroll apenas aqui */
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
+
+    /* Scrollbar Bonita */
+    main::-webkit-scrollbar { width: 8px; }
+    main::-webkit-scrollbar-track { background: transparent; }
+    main::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; border: 2px solid var(--bg-color); }
 
     /* ================= BOTÃO ================= */
     button#auditButton {
       width: 100%;
       padding: 12px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: white;
       background-color: var(--primary-color);
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
-      box-shadow: var(--shadow-sm);
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 8px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-md);
     }
 
-    button#auditButton:hover { background-color: var(--primary-hover); }
-    button#auditButton:active { transform: scale(0.98); }
-    button#auditButton:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    button#auditButton:hover { background-color: #1d4ed8; transform: translateY(-1px); }
+    button#auditButton:active { transform: translateY(0); }
+    button:disabled { background-color: #94a3b8; cursor: not-allowed; transform: none; }
 
-    /* ================= SCORE (TEXTO) ================= */
-    #score {
-      margin-top: 20px;
+    /* ================= SCORE (GRÁFICO) ================= */
+    .score-section {
       background-color: var(--card-bg);
-      padding: 16px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.2rem;
-      border: 1px solid var(--border-color);
+      padding: 15px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Centralizado */
+      gap: 20px;
       box-shadow: var(--shadow-sm);
-      transition: color 0.3s, border-color 0.3s;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
     }
 
-    /* ================= LISTA DE ERROS ================= */
-    #errorList {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 20px;
-      max-height: 400px;
-      overflow-y: auto;
+    .chart-wrapper { width: 80px; height: 80px; position: relative; flex-shrink: 0; }
+    .donut-chart { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .donut-bg { fill: none; stroke: var(--border-color); stroke-width: 8; }
+    .donut-meter {
+      fill: none; stroke-width: 8; stroke-linecap: round;
+      stroke-dasharray: 100; stroke-dashoffset: 100;
+      transition: stroke-dashoffset 1s ease-out;
+    }
+    .donut-text {
+      fill: var(--text-main); font-family: sans-serif; font-weight: 800; font-size: 24px;
+      text-anchor: middle; transform: rotate(90deg); transform-origin: center;
     }
 
-    #errorList li {
-      background-color: var(--card-bg);
-      margin-bottom: 12px;
-      padding: 14px 16px;
-      border-radius: 8px;
-      font-size: 13px;
-      border: 1px solid transparent; /* Prepara para borda */
-      transition: transform 0.2s;
+    .score-info { text-align: left; }
+    .score-title { font-size: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; }
+    .score-details { font-size: 14px; font-weight: 500; margin-top: 4px; color: var(--text-main); }
+
+    /* Cores Gráfico */
+    .score-good { stroke: var(--success-color); }
+    .score-bad { stroke: var(--error-color); }
+    .score-neutral { stroke: var(--warning-color); }
+
+    /* ================= LISTA DE CATEGORIAS (ACORDEÃO) ================= */
+    #resultsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      /* Padding extra para a sombra não cortar */
+      padding: 5px; 
     }
 
-    /* --- ESTILO: ERRO (Sombra Vermelha) --- */
-    /* Adicionado via JS */
-    #errorList li.error-item {
-      box-shadow: var(--shadow-red); /* Sombra vermelha suave */
-      border-left: 5px solid var(--error-color); /* Barra lateral vermelha */
-      color: var(--text-main);
+    /* O Card da Categoria (Details) */
+    details.category-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    details.category-card[open] {
+      box-shadow: var(--shadow-md);
+      padding-bottom: 10px;
+    }
+
+    /* Cabeçalho da Categoria (Summary) */
+    summary.category-header {
+      list-style: none;
+      padding: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
     }
     
-    #errorList li.error-item:hover {
-      transform: translateX(2px); /* Efeito sutil ao passar o mouse */
+    summary.category-header::-webkit-details-marker { display: none; }
+
+    /* Cores do Cabeçalho baseadas no status */
+    .cat-success summary { border-left: 5px solid var(--success-color); color: #166534; }
+    .cat-success summary:hover { background-color: var(--success-bg); }
+    
+    .cat-fail summary { border-left: 5px solid var(--error-color); color: #991b1b; }
+    .cat-fail summary:hover { background-color: var(--error-bg); }
+
+    /* Contador (Badge) */
+    .badge {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: 700;
     }
+    .cat-success .badge { background: var(--success-bg); color: var(--success-color); border: 1px solid var(--success-color); }
+    .cat-fail .badge { background: var(--error-bg); color: var(--error-color); border: 1px solid var(--error-color); }
 
-    /* --- ESTILO: SUCESSO (Borda Verde) --- */
-    #errorList li.success-item {
-      background-color: var(--success-bg);
-      border: 2px solid var(--success-color); /* Borda Verde */
-      color: #14532d;
-      font-weight: 600;
-      text-align: center;
+    /* Lista interna de erros */
+    .error-list {
+      list-style: none;
+      padding: 0 15px;
+      margin-top: 10px;
+      max-height: 200px; /* Scroll interno se a categoria for muito grande */
+      overflow-y: auto;
     }
+    
+    .error-list::-webkit-scrollbar { width: 4px; }
+    .error-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
 
-    /* Scrollbar bonita */
-    #errorList::-webkit-scrollbar { width: 6px; }
-    #errorList::-webkit-scrollbar-track { background: transparent; }
-    #errorList::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .error-item {
+      font-size: 13px;
+      padding: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--text-main);
+      display: flex;
+      gap: 8px;
+    }
+    .error-item:last-child { border-bottom: none; }
+    
+    /* Ícone no item de erro */
+    .bullet-error { color: var(--error-color); font-weight: bold; }
+    .bullet-success { color: var(--success-color); font-weight: bold; }
 
+    /* Rodapé */
     footer {
-      margin-top: 20px;
       text-align: center;
+      padding: 10px;
       font-size: 11px;
       color: var(--text-muted);
       border-top: 1px solid var(--border-color);
-      padding-top: 10px;
+      background: var(--card-bg);
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -165,27 +233,50 @@
 
   <header>
     <h1>
-      <svg class="icon-access" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 6 10 4 10.9 2 12 2M21 9H15V22H13V16H11V22H9V9H3V7H21V9Z" />
+      <svg class="icon-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="7" r="2"/>
+        <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
+        <line x1="12" y1="12" x2="12" y2="14"/>
+        <line x1="8" y1="16" x2="6" y2="18"/>
+        <line x1="16" y1="16" x2="18" y2="18"/>
       </svg>
-     Plugin GG2
+      Plugin GG2
     </h1>
   </header>
 
   <main>
-    <p class="intro-text">Verifique a conformidade (WCAG) da página ativa.</p>
+    <p style="text-align: center; font-size: 13px; color: #64748b; margin:0;">
+      Verifique a acessibilidade e métricas de IHC.
+    </p>
 
     <button id="auditButton" type="button">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
       Analisar Página
     </button>
 
-    <div id="score" aria-live="polite">Aguardando análise...</div>
+    <div class="score-section">
+      <div class="chart-wrapper">
+        <svg viewBox="0 0 100 100" class="donut-chart">
+          <circle class="donut-bg" cx="50" cy="50" r="45"></circle>
+          <circle id="scoreCircle" class="donut-meter" cx="50" cy="50" r="45" pathLength="100"></circle>
+          <text id="scoreText" x="50" y="55" class="donut-text">--</text>
+        </svg>
+      </div>
+      <div class="score-info">
+        <div class="score-title">Pontuação Global</div>
+        <div id="scoreDetails" class="score-details">Aguardando...</div>
+      </div>
+    </div>
 
-    <ul id="errorList" aria-live="polite"></ul>
+    <div id="resultsContainer"></div>
+
   </main>
 
   <footer>
-    Ferramenta de Auditoria v1.0
+    Ferramenta de Auditoria IHC v2.0
   </footer>
 
   <script src="popup.js"></script>
